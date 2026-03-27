@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gigathink — Paco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="project.css" />
+  <style>
+    /* ── Hero réduit pour cette page ── */
+    .proj-hero {
+      min-height: 40vh;
+      padding-top: 120px;
+      padding-bottom: 56px;
+    }
+
+    /* ── Arch-list avec cartes grises (projets Le stage) ── */
+    .proj-arch-list-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .proj-arch-list-cards .proj-arch-item {
+      display: grid !important;
+      grid-template-columns: 112px 1fr;
+      column-gap: 16px;
+      align-items: start;
+      background: rgba(26,26,26,.03);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .proj-arch-list-cards .proj-arch-tag {
+      justify-self: start;
+    }
+
+    /* ── Section contexte compacte ── */
+    .proj-content-ctx {
+      padding-top: 56px !important;
+      padding-bottom: 56px !important;
+    }
+    .proj-content-grid-ctx {
+      grid-template-columns: 1fr 1fr !important;
+      align-items: stretch !important;
+    }
+    .proj-block-fill {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    /* Sous-cartes Scrum en ligne */
+    .proj-arch-list-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .proj-arch-list-row .proj-arch-item {
+      display: flex !important;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(26,26,26,.03);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .proj-arch-list-row .proj-arch-tag {
+      align-self: flex-start;
+    }
+
+.stage-section {
+      border-top: 1px solid rgba(26,26,26,.1);
+      padding-top: 64px;
+      margin-top: 16px;
+    }
+    .stage-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.02em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .stage-section-title em { font-style: italic; }
+    .stage-section-sub {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: .32;
+      display: block;
+      margin-bottom: 48px;
+    }
+    .proj-content-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px) { .proj-content-grid-3 { grid-template-columns: 1fr; } }
+
+    /* ── Responsive stage-1 ── */
+    @media (max-width: 768px) {
+      .proj-content-ctx {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+      .proj-content-grid-ctx {
+        grid-template-columns: 1fr !important;
+      }
+      .proj-arch-list-row {
+        grid-template-columns: 1fr;
+      }
+      .stage-section {
+        padding-top: 48px;
+        margin-top: 8px;
+      }
+      .stage-section-sub {
+        margin-bottom: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="proj-nav">
+  <a href="../index.html#projets" class="proj-nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M13 7 L1 7 M6 2 L1 7 L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Retour au portfolio
+  </a>
+  <a href="../index.html" class="proj-nav-logo">Paco.</a>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────── -->
+<section class="proj-hero">
+  <div class="proj-hero-inner">
+    <span class="proj-eyebrow">Professionnel — Janv. / Mars 2026</span>
+    <h1><em>Gigathink</em></h1>
+    <div class="proj-hero-meta">
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Type</span>
+        <span class="proj-hero-meta-value">Stage Full-Stack</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Stack</span>
+        <span class="proj-hero-meta-value">Laravel · Vue 3 · Figma</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Projets</span>
+        <span class="proj-hero-meta-value">Room Event · Recipe API · GNews</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Méthode</span>
+        <span class="proj-hero-meta-value">Agile Scrum</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Liens</span>
+        <span class="proj-hero-meta-value" style="display:flex;gap:16px">
+          <a class="proj-hero-link" href="https://gigathink.ch/" target="_blank" rel="noopener">Gigathink ↗</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTEXTE ──────────────────────────── -->
+<div class="proj-content proj-content-ctx">
+  <div class="proj-content-inner">
+
+    <div class="proj-content-grid-2 proj-content-grid-ctx">
+      <div class="proj-block proj-block-fill">
+        <span class="proj-block-title">Le stage</span>
+        <p class="proj-about-text">
+          Durant ce stage chez <strong>Gigathink</strong>, j'ai travaillé sur <strong>3 projets majeurs</strong>.
+        </p>
+        <div class="proj-arch-list-cards">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#8b5cf6">Room Event</span>
+            <div>
+              <div class="proj-arch-item-title">Room Event</div>
+              <div class="proj-arch-item-desc">Réservation de salles événementielles pour un client particulier.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Recipe API</span>
+            <div>
+              <div class="proj-arch-item-title">Recipe API</div>
+              <div class="proj-arch-item-desc">API interne de gestion de recettes de cuisine.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#5d65d1">GNews</span>
+            <div>
+              <div class="proj-arch-item-title">GNews</div>
+              <div class="proj-arch-item-desc">Produit interne de veille et agrégation d'actualités.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block proj-block-fill">
+        <span class="proj-block-title">Méthode Agile — Scrum</span>
+        <p class="proj-about-text">Stand-up quotidien chaque matin pour synchroniser l'équipe, partager l'avancement et débloquer les points en suspens.</p>
+        <div class="proj-arch-list-row">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">Daily</span>
+            <div>
+              <div class="proj-arch-item-title">Stand-up quotidien</div>
+              <div class="proj-arch-item-desc">Réunion courte chaque matin pour planifier la journée.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Suivi</span>
+            <div>
+              <div class="proj-arch-item-title">Suivi des tâches</div>
+              <div class="proj-arch-item-desc">Chaque membre partage son avancement et ses priorités.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Blocages</span>
+            <div>
+              <div class="proj-arch-item-title">Résolution de blocages</div>
+              <div class="proj-arch-item-desc">Remontée des problèmes pour débloquer rapidement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ROOM EVENT ══ -->
+    <div class="stage-section">
+      <h2 class="stage-section-title"><em>Room Event</em></h2>
+      <span class="stage-section-sub">Application Web — Réservation de salles événementielles</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CAROUSEL ROOM EVENT ──────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser" id="c1">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">roomevent.gigathink.fr</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/stages/stages2/login.png" alt="Login"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/register.png" alt="Inscription"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/forgotpassword.png" alt="Mot de passe oublié"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/choosdate.png" alt="Choisir une date"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/choosesalle.png" alt="Choisir une salle"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/detailssalle.png" alt="Détails salle"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/room.png" alt="Salle"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/dashboard.png" alt="Dashboard"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/reservation.png" alt="Réservation"></div>
+      </div>
+    </div>
+  </div>
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots" id="c1-dots"></div>
+    <span class="proj-carousel-counter" id="c1-counter">01 / 09</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU ROOM EVENT ────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>Room Event</strong> est une application web de réservation de salles événementielles développée en équipe lors de mon stage chez Gigathink.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Ma contribution : développement des <strong>vues Vue 3</strong> avec Inertia.js, intégration du <strong>paiement Stripe</strong> via Laravel Cashier et mise en place du <strong>panel d'administration</strong> avec Filament 4.
+        </p>
+      </div>
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel">
+            Laravel 12 — PHP 8.2+
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue 3">
+            Vue 3 + Inertia.js
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            MySQL 8.0
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg" alt="Docker">
+            Laravel Sail (Docker)
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite">
+            Vite + Tailwind CSS
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">💳</span>
+            Stripe — Laravel Cashier
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Ma contribution</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">Vue 3</span>
+            <div>
+              <div class="proj-arch-item-title">Vues & Interfaces</div>
+              <div class="proj-arch-item-desc">Pages connexion, inscription, réservation, détails salle avec Inertia.js et Vue i18n (FR/EN).</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Stripe</span>
+            <div>
+              <div class="proj-arch-item-title">Intégration Stripe</div>
+              <div class="proj-arch-item-desc">Paiement via Laravel Cashier, abonnements, factures et moyens de paiement.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Admin</span>
+            <div>
+              <div class="proj-arch-item-title">Panel Filament 4</div>
+              <div class="proj-arch-item-desc">Gestion des salles, réservations, utilisateurs et rôles via Spatie Permission.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Packages & Outils</span>
+        <div class="proj-tools-grid">
+          <div class="proj-tool-card" style="--tool-color:#6366f1">
+            <div class="proj-tool-card-name">Filament 4</div>
+            <div class="proj-tool-card-desc">Panel d'administration</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#10b981">
+            <div class="proj-tool-card-name">Laravel Cashier</div>
+            <div class="proj-tool-card-desc">Stripe & abonnements</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#f59e0b">
+            <div class="proj-tool-card-name">Spatie Permission</div>
+            <div class="proj-tool-card-desc">Rôles & permissions</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#f43f5e">
+            <div class="proj-tool-card-name">Laravel Breeze</div>
+            <div class="proj-tool-card-desc">Auth & vérification email</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#8b5cf6">
+            <div class="proj-tool-card-name">Laravel Socialite</div>
+            <div class="proj-tool-card-desc">OAuth Google</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#14b8a6">
+            <div class="proj-tool-card-name">Inertia.js</div>
+            <div class="proj-tool-card-desc">SPA sans API REST</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#3b82f6">
+            <div class="proj-tool-card-name">Vue i18n</div>
+            <div class="proj-tool-card-desc">Français / Anglais</div>
+          </div>
+          <div class="proj-tool-card" style="--tool-color:#1a1a1a">
+            <div class="proj-tool-card-name">Laravel Sail</div>
+            <div class="proj-tool-card-desc">Docker dev environment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ COOKING RECIPE API ══ -->
+    <div class="stage-section">
+      <h2 class="stage-section-title"><em>Cooking Recipe API</em></h2>
+      <span class="stage-section-sub">Plateforme API — Recettes de cuisine</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CAROUSEL RECIPE ───────────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser" id="c2">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">cooking-recipe-api.gigathink.fr</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/stages/stages2/accueilRecipe.png" alt="Accueil"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/builtforevery.png" alt="Built for every"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/everything you need.png" alt="Everything you need"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/Howitwork.png" alt="How it works"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/faq.png" alt="FAQ"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/footer.png" alt="Footer"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/docRecipe.png" alt="Documentation"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/getRecipe.png" alt="Get Recipe"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/recettes.png" alt="Recettes"></div>
+      </div>
+    </div>
+  </div>
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots" id="c2-dots"></div>
+    <span class="proj-carousel-counter" id="c2-counter">01 / 09</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU RECIPE ────────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>Cooking Recipe API</strong> est une plateforme permettant aux développeurs d'accéder à des recettes de cuisine via une API REST. Les utilisateurs s'inscrivent, obtiennent une clé API et suivent leur consommation depuis un tableau de bord.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Ma contribution : développement des <strong>vues</strong>, <strong>création des recettes</strong> et intégration d'un <strong>agent OpenAI</strong> pour générer automatiquement le contenu avec des données standardisées.
+        </p>
+      </div>
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel">
+            Laravel 12 — PHP 8.2+
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+            PostgreSQL
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg" alt="Alpine.js">
+            Alpine.js
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite">
+            Vite 7 + Tailwind CSS v4
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">🤖</span>
+            OpenAI API
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            Figma
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Ma contribution</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">UI</span>
+            <div>
+              <div class="proj-arch-item-title">Vues & UI</div>
+              <div class="proj-arch-item-desc">Dashboard, profil, clé API, plans tarifaires et journalisation avec Tailwind v4 + Alpine.js.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">AI</span>
+            <div>
+              <div class="proj-arch-item-title">Agent OpenAI</div>
+              <div class="proj-arch-item-desc">Génération automatique des recettes avec données standardisées (unités, formats, étapes).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Architecture BDD</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">users</span>
+            <div><div class="proj-arch-item-desc">Comptes avec plan tarifaire associé.</div></div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">api_keys</span>
+            <div><div class="proj-arch-item-desc">Clés API générées à l'inscription.</div></div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">logs</span>
+            <div><div class="proj-arch-item-desc">Historique des appels — endpoint, méthode, statut.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ GNEWS ══ -->
+    <div class="stage-section">
+      <h2 class="stage-section-title"><em>GNews</em></h2>
+      <span class="stage-section-sub">Refonte site corporate — SEO & Identité visuelle</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CAROUSEL GNEWS ───────────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser" id="c3">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">gnews.io</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/stages/stages2/GnewsS22.png" alt="GNews 1"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/GnewsS222.png" alt="GNews 2"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/GnewsS2222.png" alt="GNews 3"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/GnewsS22222.png" alt="GNews 4"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/countrydetail.jpeg" alt="Country Detail"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages2/CountryGnews.jpeg" alt="Country News"></div>
+      </div>
+    </div>
+  </div>
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots" id="c3-dots"></div>
+    <span class="proj-carousel-counter" id="c3-counter">01 / 06</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU GNEWS ─────────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>GNews</strong> est une API de collecte et diffusion d'actualités en temps réel éditée par Gigathink. J'ai réalisé la <strong>refonte complète du site corporate</strong> en concevant les maquettes sur Figma et en intégrant les pages en HTML via GitLab.
+        </p>
+      </div>
+      <div class="proj-block">
+        <span class="proj-block-title">Stack & Outils</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            Figma — Maquettes
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab">
+            GitLab — CI/CD
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+            HTML / JSON
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">🔍</span>
+            SEO & Analytics
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+            SQL — Requêtes & BDD
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Ma contribution</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f43f5e">Design</span>
+            <div>
+              <div class="proj-arch-item-title">Refonte visuelle</div>
+              <div class="proj-arch-item-desc">Maquettes Figma, intégration HTML, UX modernisée — développement collaboratif via GitLab.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">SEO</span>
+            <div>
+              <div class="proj-arch-item-title">Optimisation SEO</div>
+              <div class="proj-arch-item-desc">Balises, structure, vitesse, JSON-LD. Pages retravaillées : Pricing, FAQ, Sign Up.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Campagne "Ils nous font confiance"</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">BDD</span>
+            <div>
+              <div class="proj-arch-item-title">Requêtes base de données</div>
+              <div class="proj-arch-item-desc">Extraction des étudiants sous programme éducatif GNews.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Classement</span>
+            <div>
+              <div class="proj-arch-item-title">Tri des écoles</div>
+              <div class="proj-arch-item-desc">Par réputation, abonnés LinkedIn et nombre d'étudiants.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#14b8a6">Email</span>
+            <div>
+              <div class="proj-arch-item-title">Campagne e-mail</div>
+              <div class="proj-arch-item-desc">Prise de contact pour obtenir les droits d'affichage des logos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+function initCarousel(browserId, dotsId, counterId) {
+  const browser  = document.getElementById(browserId);
+  const viewport = browser.querySelector('.proj-carousel-viewport');
+  const slides   = Array.from(browser.querySelectorAll('.proj-carousel-slide'));
+  const dotsWrap = document.getElementById(dotsId);
+  const counter  = document.getElementById(counterId);
+  const tapL     = viewport.querySelector('.proj-carousel-tap-l');
+  const tapR     = viewport.querySelector('.proj-carousel-tap-r');
+
+  let cur = 0, timer = null;
+  const total = slides.length, DELAY = 4500;
+
+  slides.forEach((_, i) => {
+    const seg  = document.createElement('button');
+    seg.className = 'proj-carousel-dot' + (i === 0 ? ' active' : '');
+    const fill = document.createElement('div');
+    fill.className = 'proj-carousel-dot-fill';
+    seg.appendChild(fill);
+    seg.addEventListener('click', () => { goTo(i); resetTimer(); });
+    dotsWrap.appendChild(seg);
+  });
+
+  function goTo(i) {
+    slides[cur].classList.remove('active');
+    dotsWrap.children[cur].classList.remove('active');
+    cur = (i + total) % total;
+    slides[cur].classList.add('active');
+    dotsWrap.children[cur].classList.add('active');
+    if (counter) counter.textContent = String(cur+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+  }
+
+  function startTimer() { timer = setInterval(() => goTo(cur + 1), DELAY); }
+  function resetTimer() { clearInterval(timer); startTimer(); }
+
+  tapL.addEventListener('click', () => { goTo(cur - 1); resetTimer(); });
+  tapR.addEventListener('click', () => { goTo(cur + 1); resetTimer(); });
+  browser.addEventListener('mouseenter', () => clearInterval(timer));
+  browser.addEventListener('mouseleave', startTimer);
+
+  goTo(0); startTimer();
+}
+
+initCarousel('c1','c1-dots','c1-counter');
+initCarousel('c2','c2-dots','c2-counter');
+initCarousel('c3','c3-dots','c3-counter');
+</script>
+
+</body>
+</html>

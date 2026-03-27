@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actualités — Paco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+<nav class="proj-nav">
+  <a href="../index.html#projets" class="proj-nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M13 7 L1 7 M6 2 L1 7 L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Retour au portfolio
+  </a>
+  <a href="../index.html" class="proj-nav-logo">Paco.</a>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────── -->
+<section class="proj-hero">
+  <div class="proj-hero-inner">
+    <span class="proj-eyebrow">Scolaire — 2024</span>
+    <h1><em>Actualités</em></h1>
+    <div class="proj-hero-meta">
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Type</span>
+        <span class="proj-hero-meta-value">Application Web</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Stack</span>
+        <span class="proj-hero-meta-value">Symfony · Bootstrap · MariaDB</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Contexte</span>
+        <span class="proj-hero-meta-value">Projet scolaire</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Code</span>
+        <a class="proj-hero-meta-value proj-hero-link" href="https://github.com/pacobrnt/actualites" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAROUSEL ──────────────────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">actualites-app.fr</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l" aria-label="Précédent"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r" aria-label="Suivant"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/actualites/Actuacceuil.png" alt="Accueil"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/actualites/Actulogin.png" alt="Connexion"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/actualites/ActuSearch.png" alt="Recherche"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/actualites/ActuLike.png" alt="Mes favoris"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots">
+      <button class="proj-carousel-dot active"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+    </div>
+    <span class="proj-carousel-counter">01 / 04</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU ───────────────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <!-- À propos + Stack -->
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>Actualités</strong> est une application web dynamique développée avec <strong>Symfony</strong>.
+          Elle permet aux utilisateurs de suivre l'actualité en temps réel grâce à l'intégration de l'API <strong>GNews</strong>.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          L'interface conçue avec Bootstrap 5 offre une navigation fluide. Les données utilisateurs et les favoris sont persistés dans une base <strong>MariaDB</strong> gérée sous MAMP.
+        </p>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony">
+            Symfony — PHP
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MariaDB">
+            MariaDB (MAMP)
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+            Bootstrap 5
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">🌐</span>
+            API GNews
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fonctionnalités + Parcours -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Fonctionnalités</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Flux d'actualités en direct via API externe.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Recherche d'articles par mots-clés.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Authentification utilisateur sécurisée.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Sauvegarde des articles en favoris (base de données).
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Parcours utilisateur</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">01</span>
+            <div>
+              <div class="proj-arch-item-title">Connexion</div>
+              <div class="proj-arch-item-desc">Accès sécurisé au compte personnel.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">02</span>
+            <div>
+              <div class="proj-arch-item-title">Exploration</div>
+              <div class="proj-arch-item-desc">Visualisation des articles récupérés via l'API.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">03</span>
+            <div>
+              <div class="proj-arch-item-title">Gestion</div>
+              <div class="proj-arch-item-desc">Ajout aux favoris stockés dans MariaDB.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CTA ───────────────────────────────── -->
+<section class="proj-cta">
+  <a href="https://github.com/pacobrnt/actualites" target="_blank" rel="noopener" class="btn"><span>Voir le code ↗</span></a>
+</section>
+
+<script src="project.js"></script>
+</body>
+</html>

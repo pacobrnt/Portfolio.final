@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deuce — Paco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+<nav class="proj-nav">
+  <a href="../index.html#projets" class="proj-nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M13 7 L1 7 M6 2 L1 7 L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Retour au portfolio
+  </a>
+  <a href="../index.html" class="proj-nav-logo">Paco.</a>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────── -->
+<section class="proj-hero">
+  <div class="proj-hero-inner">
+    <span class="proj-eyebrow">Personnel — 2025</span>
+    <h1><em>Deuce</em></h1>
+    <div class="proj-hero-meta">
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Type</span>
+        <span class="proj-hero-meta-value">Progressive Web App</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Stack</span>
+        <span class="proj-hero-meta-value">Symfony 8 · PWA · Firebase</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Statut</span>
+        <span class="proj-hero-meta-value">En ligne</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Lien</span>
+        <a class="proj-hero-meta-value proj-hero-link" href="https://deuceapp.fr" target="_blank" rel="noopener">deuceapp.fr ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PHONE MOCKUPS ─────────────────────── -->
+<div class="proj-phones">
+  <div class="proj-phones-inner">
+
+    <!-- Site Web -->
+    <div class="phone-unit">
+      <div class="phone-mockup-wrap">
+        <button class="phone-tap phone-tap-l" id="phonePrev" aria-label="Précédent">
+          <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M7 1.5L2 8L7 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="phone-mockup">
+          <div class="phone-bar"><div class="phone-pill"></div></div>
+          <div class="phone-screen" id="phoneScreen">
+            <button class="phone-screen-tap phone-screen-tap-l" data-target="phonePrev"></button>
+            <button class="phone-screen-tap phone-screen-tap-r" data-target="phoneNext"></button>
+            <div class="phone-slide active" data-label="Accueil"><img src="../img/projets/deuce/Accueil.jpeg" alt="Accueil"></div>
+            <div class="phone-slide" data-label="Fonctionnalités"><img src="../img/projets/deuce/fonction.jpeg" alt="Fonctionnalités"></div>
+            <div class="phone-slide" data-label="Carte & terrain"><img src="../img/projets/deuce/card.jpeg" alt="Card"></div>
+            <div class="phone-slide" data-label="Badges"><img src="../img/projets/deuce/badges.jpeg" alt="Badges"></div>
+            <div class="phone-slide" data-label="Apparence"><img src="../img/projets/deuce/apparence.jpeg" alt="Apparence"></div>
+            <div class="phone-slide" data-label="Contact"><img src="../img/projets/deuce/contact.jpeg" alt="Contact"></div>
+            <div class="phone-slide" data-label="Footer"><img src="../img/projets/deuce/footer.jpeg" alt="Footer"></div>
+          </div>
+        </div>
+        <button class="phone-tap phone-tap-r" id="phoneNext" aria-label="Suivant">
+          <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M2 1.5L7 8L2 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="phone-progress-wrap">
+        <div class="phone-progress" id="phoneDots"></div>
+        <span class="phone-counter" id="phoneCounter">1 / 7</span>
+      </div>
+      <span class="phone-type-label">Site Web</span>
+    </div>
+
+    <!-- Application PWA -->
+    <div class="phone-unit">
+      <div class="phone-mockup-wrap">
+        <button class="phone-tap phone-tap-l" id="phone2Prev" aria-label="Précédent">
+          <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M7 1.5L2 8L7 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="phone-mockup">
+          <div class="phone-bar"><div class="phone-pill"></div></div>
+          <div class="phone-screen" id="phone2Screen">
+            <button class="phone-screen-tap phone-screen-tap-l" data-target="phone2Prev"></button>
+            <button class="phone-screen-tap phone-screen-tap-r" data-target="phone2Next"></button>
+            <div class="phone-slide-web active" data-label="PWA — 1"><img src="../img/projets/deuce/pwa.jpeg" alt="PWA"></div>
+            <div class="phone-slide-web" data-label="PWA — 2"><img src="../img/projets/deuce/pwa1.jpeg" alt="PWA 1"></div>
+            <div class="phone-slide-web" data-label="PWA — 3"><img src="../img/projets/deuce/pwa2.jpeg" alt="PWA 2"></div>
+            <div class="phone-slide-web" data-label="PWA — 4"><img src="../img/projets/deuce/pwa3.jpeg" alt="PWA 3"></div>
+            <div class="phone-slide-web" data-label="PWA — 5"><img src="../img/projets/deuce/pwa4.jpeg" alt="PWA 4"></div>
+            <div class="phone-slide-web" data-label="PWA — 6"><img src="../img/projets/deuce/pwa5.jpeg" alt="PWA 5"></div>
+            <div class="phone-slide-web" data-label="PWA — 7"><img src="../img/projets/deuce/pwa6.jpeg" alt="PWA 6"></div>
+          </div>
+        </div>
+        <button class="phone-tap phone-tap-r" id="phone2Next" aria-label="Suivant">
+          <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M2 1.5L7 8L2 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="phone-progress-wrap">
+        <div class="phone-progress" id="phone2Dots"></div>
+        <span class="phone-counter" id="phone2Counter">1 / 7</span>
+      </div>
+      <span class="phone-type-label">Application PWA</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CONTENU ───────────────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <!-- À propos + Stack -->
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>Deuce</strong> est une application web progressive dédiée aux joueurs de tennis amateurs.
+          Elle permet d'enregistrer des matchs, de suivre ses statistiques, de participer à des championnats et de se connecter avec d'autres joueurs.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Ce projet représente ma montée en compétences sur Symfony 8 avec une architecture API-first, une authentification JWT, l'intégration de Firebase pour les notifications push, et un système de classement ELO inspiré des compétitions officielles.
+        </p>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony">
+            Symfony 8.0 — PHP 8.4
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            MySQL & Doctrine ORM
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+            Firebase Cloud Messaging
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">🔑</span>
+            JWT Authentication
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">G</span>
+            OAuth Google / Apple
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">📱</span>
+            Progressive Web App
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fonctionnalités + Architecture -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Fonctionnalités clés</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Enregistrement et suivi des matchs (Simple / Double) avec historique complet.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Classement ELO dynamique et statistiques de performance (winrate, séries).
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Système de badges débloqués selon les performances et accomplissements.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Gestion des amis, championnats et leaderboards.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Notifications push via Firebase Cloud Messaging.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Export PDF des statistiques et partage via QR Code.
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Architecture API</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">Auth</span>
+            <div>
+              <div class="proj-arch-item-title">Authentification</div>
+              <div class="proj-arch-item-desc">JWT, inscription / connexion, OAuth Google & Apple, reset mot de passe.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Match</span>
+            <div>
+              <div class="proj-arch-item-title">Gestion des matchs</div>
+              <div class="proj-arch-item-desc">Enregistrement, sets, scores, commentaires et réactions.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Champ.</span>
+            <div>
+              <div class="proj-arch-item-title">Championnats</div>
+              <div class="proj-arch-item-desc">Tournois, participants, classements.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f43f5e">User</span>
+            <div>
+              <div class="proj-arch-item-title">Profils & Niveaux</div>
+              <div class="proj-arch-item-desc">Gestion des profils, niveaux, visibilité et paramètres.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outils -->
+    <div class="proj-block">
+      <span class="proj-block-title">Outils & Librairies</span>
+      <div class="proj-tools-grid">
+        <div class="proj-tool-card" style="--tool-color:#6366f1">
+          <div class="proj-tool-card-name">Doctrine ORM</div>
+          <div class="proj-tool-card-desc">Migrations & Entities</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#f97316">
+          <div class="proj-tool-card-name">Symfony Mailer</div>
+          <div class="proj-tool-card-desc">Emails transactionnels</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#ef4444">
+          <div class="proj-tool-card-name">DomPDF</div>
+          <div class="proj-tool-card-desc">Export de rapports PDF</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#1a1a1a">
+          <div class="proj-tool-card-name">QR Code</div>
+          <div class="proj-tool-card-desc">Partage de stats</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#8b5cf6">
+          <div class="proj-tool-card-name">Vich Uploader</div>
+          <div class="proj-tool-card-desc">Upload photos de profil</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#14b8a6">
+          <div class="proj-tool-card-name">Symfony Messenger</div>
+          <div class="proj-tool-card-desc">Messages asynchrones</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#10b981">
+          <div class="proj-tool-card-name">KnpPaginator</div>
+          <div class="proj-tool-card-desc">Pagination des résultats</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#eab308">
+          <div class="proj-tool-card-name">Nelmio CORS</div>
+          <div class="proj-tool-card-desc">Sécurité cross-origin</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CTA ───────────────────────────────── -->
+<section class="proj-cta">
+<a href="https://deuceapp.fr" target="_blank" rel="noopener" class="btn"><span>Voir le site ↗</span></a>
+</section>
+
+<script src="project.js"></script>
+<script>
+function initPhone(screenId, slideSelector, prevId, nextId, dotsId, counterId) {
+  const screen  = document.getElementById(screenId);
+  const slides  = Array.from(screen.querySelectorAll(slideSelector));
+  const dotsWrap = document.getElementById(dotsId);
+  const counter  = document.getElementById(counterId);
+  const prevBtn  = document.getElementById(prevId);
+  const nextBtn  = document.getElementById(nextId);
+  if (!slides.length) return;
+
+  let cur = 0;
+
+  slides.forEach((_, i) => {
+    const seg  = document.createElement('button');
+    seg.className = 'phone-progress-seg' + (i === 0 ? ' active' : '');
+    const fill = document.createElement('span');
+    fill.className = 'phone-progress-fill';
+    seg.appendChild(fill);
+    seg.addEventListener('click', () => go(i));
+    dotsWrap.appendChild(seg);
+  });
+
+  function go(i) {
+    slides[cur].classList.remove('active');
+    dotsWrap.children[cur].classList.remove('active');
+    cur = (i + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dotsWrap.children[cur].classList.add('active');
+    counter.textContent = (cur + 1) + ' / ' + slides.length;
+  }
+
+  prevBtn.addEventListener('click', () => go(cur - 1));
+  nextBtn.addEventListener('click', () => go(cur + 1));
+
+  screen.querySelectorAll('.phone-screen-tap').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.target === prevId) go(cur - 1);
+      else go(cur + 1);
+    });
+  });
+}
+
+initPhone('phoneScreen',  '.phone-slide',     'phonePrev',  'phoneNext',  'phoneDots',  'phoneCounter');
+initPhone('phone2Screen', '.phone-slide-web', 'phone2Prev', 'phone2Next', 'phone2Dots', 'phone2Counter');
+</script>
+</body>
+</html>

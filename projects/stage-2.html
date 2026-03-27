@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gigathink — Paco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="project.css" />
+  <style>
+    .proj-hero { min-height: 40vh; padding-top: 120px; padding-bottom: 56px; }
+
+    .proj-content-ctx { padding-top: 56px !important; padding-bottom: 56px !important; }
+    .proj-content-grid-ctx {
+      grid-template-columns: 1fr 1fr !important;
+      align-items: stretch !important;
+    }
+    .proj-block-fill {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Bloc image (internationalisation / analyse) */
+    .proj-img-block {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid rgba(26,26,26,.1);
+      align-self: stretch;
+    }
+    .proj-img-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Tags pages retravaillées */
+    .proj-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .proj-page-tag {
+      font-size: .78rem;
+      font-weight: 400;
+      color: var(--black);
+      opacity: .75;
+      border: 1.5px solid rgba(26,26,26,.12);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .proj-page-tag::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--page-color, #1a1a1a);
+      flex-shrink: 0;
+    }
+
+    /* Browser preview GNews */
+    .stage2-iframe-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid rgba(26,26,26,.1);
+      margin-top: 24px;
+    }
+    .stage2-iframe-bar {
+      background: #e8e8e4;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(26,26,26,.08);
+    }
+    .stage2-preview {
+      display: block;
+      overflow: hidden;
+      cursor: pointer;
+      height: 340px;
+    }
+    .stage2-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform .45s ease;
+    }
+    .stage2-preview:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Carrés colorés dans feature-list */
+    .proj-feature-sq {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--sq-color, #1a1a1a);
+      flex-shrink: 0;
+      align-self: center;
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .proj-content-grid-ctx { grid-template-columns: 1fr !important; }
+      .proj-pages-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="proj-nav">
+  <a href="../index.html#projets" class="proj-nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M13 7 L1 7 M6 2 L1 7 L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Retour au portfolio
+  </a>
+  <a href="../index.html" class="proj-nav-logo">Paco.</a>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────── -->
+<section class="proj-hero">
+  <div class="proj-hero-inner">
+    <span class="proj-eyebrow">Professionnel — Juin 2025</span>
+    <h1><em>Gigathink</em></h1>
+    <div class="proj-hero-meta">
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Type</span>
+        <span class="proj-hero-meta-value">Stage SEO & Intégration</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Stack</span>
+        <span class="proj-hero-meta-value">Figma · HTML · JSON · GitLab</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Durée</span>
+        <span class="proj-hero-meta-value">1 mois</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Liens</span>
+        <span class="proj-hero-meta-value" style="display:flex;gap:16px">
+          <a class="proj-hero-link" href="https://gnews.io" target="_blank" rel="noopener">gnews.io ↗</a>
+          <a class="proj-hero-link" href="https://gigathink.ch/" target="_blank" rel="noopener">Gigathink ↗</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAROUSEL ──────────────────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser" id="c1">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">gnews.io</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l" aria-label="Précédent"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r" aria-label="Suivant"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/stages/stages1/pricing.png" alt="Pricing"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/integration.png" alt="Intégration"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/signup.png" alt="Inscription"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/question.png" alt="Questions"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/faq.png" alt="FAQ"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots">
+      <button class="proj-carousel-dot active"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
+    </div>
+    <span class="proj-carousel-counter">01 / 05</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU ───────────────────────────── -->
+<div class="proj-content proj-content-ctx">
+  <div class="proj-content-inner">
+
+    <!-- L'entreprise + Stack -->
+    <div class="proj-content-grid-2 proj-content-grid-ctx">
+      <div class="proj-block proj-block-fill">
+        <span class="proj-block-title">L'entreprise</span>
+        <p class="proj-about-text">
+          <strong>Gigathink SNC</strong> est une société suisse basée à Vernier, spécialisée dans le développement web et les applications mobiles. Elle édite notamment <strong>GNews</strong>, une API performante permettant de collecter et diffuser des actualités en temps réel.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          L'entreprise accompagne ses clients de la conception à l'optimisation de leurs solutions numériques, dans un environnement technologique en constante évolution.
+        </p>
+      </div>
+
+      <div class="proj-block proj-block-fill">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            Figma — Maquettes
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab">
+            GitLab — CI/CD
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+            HTML / JSON
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">📈</span>
+            SEO & Analytics
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+            SQL — Requêtes & BDD
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Refonte + Pages retravaillées -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Refonte du site</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#6366f1"></span>
+            Conception de maquettes ergonomiques sur Figma.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#10b981"></span>
+            Développement collaboratif via GitLab.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#f59e0b"></span>
+            Optimisation du référencement naturel (SEO).
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#f43f5e"></span>
+            Modernisation de l'image de marque et de l'UX.
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Pages retravaillées</span>
+        <div class="proj-pages-grid">
+          <span class="proj-page-tag" style="--page-color:#6366f1">Pricing</span>
+          <span class="proj-page-tag" style="--page-color:#10b981">Integration</span>
+          <span class="proj-page-tag" style="--page-color:#f59e0b">Contact</span>
+          <span class="proj-page-tag" style="--page-color:#f43f5e">Login / Signup</span>
+          <span class="proj-page-tag" style="--page-color:#8b5cf6">FAQ</span>
+          <span class="proj-page-tag" style="--page-color:#14b8a6">Partenaires</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internationalisation -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Internationalisation</span>
+        <p class="proj-about-text">
+          J'ai structuré l'ensemble des contenus textuels pour faciliter le multilinguisme.
+          Chaque expression clé a été extraite et stockée dans des <strong>fichiers JSON</strong>.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Cela permet une gestion centralisée des traductions (Anglais, Espagnol) et des mises à jour rapides sans toucher au code structurel.
+        </p>
+      </div>
+      <div class="proj-img-block">
+        <img src="../img/projets/stages/stages1/trad1.png" alt="JSON traduction">
+      </div>
+    </div>
+
+    <!-- Analyse concurrentielle -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-img-block">
+        <img src="../img/projets/stages/stages1/concurents.png" alt="Tableau comparatif">
+      </div>
+      <div class="proj-block">
+        <span class="proj-block-title">Analyse concurrentielle</span>
+        <p class="proj-about-text">
+          J'ai réalisé une étude comparative de quatre API concurrentes. Les données ont été compilées puis intégrées directement sur le site sous forme de tableaux comparatifs.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Cette démarche offre une transparence totale aux utilisateurs et met en valeur les points forts de la solution <strong>GNews</strong>.
+        </p>
+        <div class="stage2-iframe-wrap">
+          <div class="stage2-iframe-bar">
+            <div class="proj-carousel-dots-bar">
+              <div class="proj-carousel-dot-bar"></div>
+              <div class="proj-carousel-dot-bar"></div>
+              <div class="proj-carousel-dot-bar"></div>
+            </div>
+            <div class="proj-carousel-url">
+              <div class="proj-carousel-url-dot"></div>
+              <span class="proj-carousel-url-text">gnews.io</span>
+            </div>
+          </div>
+          <a href="https://gnews.io" target="_blank" rel="noopener" class="stage2-preview">
+            <img src="../img/projets/stages/stages1/homeGnews.png" alt="GNews — Accueil">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CTA ───────────────────────────────── -->
+<section class="proj-cta">
+  <a href="https://gnews.io" target="_blank" rel="noopener" class="btn"><span>Voir le site GNews ↗</span></a>
+</section>
+
+<script src="project.js"></script>
+</body>
+</html>

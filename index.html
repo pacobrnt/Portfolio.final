@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── SEO Principal ──────────────────────────── -->
+  <title>Paco Hybord — Portfolio BTS SIO SLAM | Épreuve E5 | Développeur Web</title>
+  <meta name="description" content="Portfolio de Paco Hybord, étudiant en BTS SIO option SLAM au Lycée Gabriel Fauré d'Annecy. Projets web, épreuve pratique E5, développement d'applications et cybersécurité." />
+  <meta name="keywords" content="Paco Hybord, BTS SIO, SLAM, portfolio, épreuve pratique E5, développeur web, Annecy, lycée Gabriel Fauré, portfolio BTS SIO, alternance développeur" />
+  <meta name="author" content="Paco Hybord" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ─── Open Graph (réseaux sociaux) ─────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Paco Hybord — Portfolio BTS SIO SLAM" />
+  <meta property="og:description" content="Portfolio de Paco Hybord, étudiant en BTS SIO SLAM à Annecy. Découvrez ses projets web, ses compétences et son parcours pour l'épreuve E5." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- ─── Données structurées JSON-LD ──────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paco Hybord",
+    "jobTitle": "Étudiant BTS SIO SLAM — Développeur Web",
+    "description": "Étudiant en BTS SIO option SLAM au Lycée Gabriel Fauré d'Annecy. Portfolio réalisé dans le cadre de l'épreuve pratique E5.",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Lycée Gabriel Fauré",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Annecy",
+        "addressCountry": "FR"
+      }
+    },
+    "knowsAbout": ["Développement web", "BTS SIO SLAM", "HTML", "CSS", "JavaScript", "PHP", "Cybersécurité", "Kali Linux"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Annecy",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────── -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Paco.</a>
+  <ul class="nav-links">
+    <li><a href="#a-propos">À Propos</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta"><span>Me contacter</span></a>
+  <button class="nav-burger" id="navBurger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+  <ul class="nav-mobile-links">
+    <li><a href="#a-propos">À Propos</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-mobile-cta"><span>Me contacter</span></a>
+</div>
+
+<!-- ─── HERO ──────────────────────────────────  -->
+<section class="hero">
+  <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+  <h1 class="r d1">Je développe des<br>solutions<br><span class="hero-word-clip"><em class="hero-word">web</em></span>.</h1>
+
+  <p class="hero-sub r d2">Paco Hybord — BTS SIO SLAM · Annecy.</p>
+
+  <div class="hero-actions r d3">
+    <a href="#projets" class="btn"><span>Voir mes projets</span></a>
+    <a href="#a-propos" class="hero-link">En savoir plus</a>
+  </div>
+
+  <div class="scroll-hint">
+    <p>Défiler</p>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- ─── WHEEL 3D ──────────────────────────────  -->
+<div class="wheel-wrap">
+  <div class="wheel-scene">
+    <div class="wheel">
+      <div class="wheel-item">8 projets réalisés</div>
+      <div class="wheel-item">6 certifications</div>
+      <div class="wheel-item">2 ans d'expérience</div>
+      <div class="wheel-item">+15 technos maîtrisées</div>
+      <div class="wheel-item">100% responsive</div>
+      <div class="wheel-item">Design & Développement</div>
+      <div class="wheel-item">Expert en SEO</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── À PROPOS ───────────────────────────────  -->
+<section class="feature-wrap" id="a-propos">
+  <div class="feature">
+
+    <!-- Colonne gauche : photo -->
+    <div class="about-photo r">
+      <img src="photodeprofil.jpeg" alt="Photo de profil" id="about-img" />
+      <div class="about-photo-placeholder" id="about-placeholder">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="18" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M6 42 C6 32 12 28 24 28 C36 28 42 32 42 42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Ta photo ici</span>
+      </div>
+    </div>
+
+    <!-- Colonne droite : texte + boutons -->
+    <div class="feature-content">
+      <span class="feature-eyebrow r">À propos de moi</span>
+      <h2 class="r d1">Construire avec <em>précision</em><br>et intention.</h2>
+      <p class="feature-body r d2">
+        Développeur full-stack et designer UI/UX, je transforme des idées complexes en produits digitaux clairs et impactants. J'accorde autant d'importance à la qualité du code qu'à la beauté de l'interface — parce que les deux sont inséparables.
+      </p>
+      <div class="about-actions r d3">
+        <a href="#" class="btn" download>
+          <span>Télécharger mon CV</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1 L7 10 M3 7 L7 11 L11 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 13 L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#" class="btn-outline-dark">
+          <span>Veille informationnelle</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7 4 L7 7.5 L9.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#competences" class="btn-outline-dark">
+          <span>Tableau de compétences</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M1 5 L13 5 M1 9 L13 9 M5 1 L5 13" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PARCOURS ───────────────────────────────  -->
+<section class="process" id="parcours">
+  <div class="process-head">
+    <span class="process-eyebrow r">Mon parcours</span>
+    <h2 class="r d1"><em>Formations.</em></h2>
+  </div>
+  <div class="process-grid">
+
+    <div class="proc-card r">
+      <div class="proc-num">2021<br>2024</div>
+      <p class="proc-location">Thonon-les-Bains</p>
+      <h3 class="proc-title">Lycée de la Versoie</h3>
+      <p class="proc-text">Bac STMG — Spécialité Gestion Finance.</p>
+    </div>
+
+    <div class="proc-card r d1">
+      <div class="proc-num">2024<br>2026</div>
+      <p class="proc-location">Annecy</p>
+      <h3 class="proc-title">Lycée Gabriel Fauré</h3>
+      <p class="proc-text">BTS SIO — Spécialité SLAM.</p>
+    </div>
+
+    <div class="proc-card proc-card--future r d2">
+      <div class="proc-num">2026<br>2027</div>
+      <p class="proc-location">Annecy</p>
+      <h3 class="proc-title">Campus Saint Michel</h3>
+      <p class="proc-text">Expert Bac+3 — Développeur Web Full Stack.</p>
+    </div>
+
+  </div>
+
+  <div class="process-arrow r">
+    <div class="process-arrow-inner">
+      <svg viewBox="0 0 1200 20" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <line x1="0" y1="10" x2="1188" y2="10" stroke="currentColor" stroke-width=".8" opacity=".2"/>
+        <path d="M1180 4 L1196 10 L1180 16" stroke="currentColor" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round" opacity=".4" fill="none"/>
+      </svg>
+      <span>Aujourd'hui</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── COMPÉTENCES ────────────────────────────  -->
+<section class="services" id="competences">
+  <div class="services-head">
+    <h2 class="r">Mes<br><em>compétences.</em></h2>
+    <p class="r d1">Des outils et des savoir-faire maîtrisés pour livrer des projets complets, du design au déploiement.</p>
+  </div>
+  <div class="services-grid">
+
+    <!-- 01 Langages -->
+    <div class="svc-card r">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <path d="M14 16 L6 26 L14 36 M38 16 L46 26 L38 36" stroke="#f5f5f0" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22 38 L30 14" stroke="#f5f5f0" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+      </svg>
+      <span class="svc-num">01</span>
+      <h3 class="svc-name">Langages</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">HTML5</span>
+        <span class="svc-pill">CSS3</span>
+        <span class="svc-pill">JavaScript</span>
+        <span class="svc-pill">PHP</span>
+        <span class="svc-pill">Java</span>
+        <span class="svc-pill">Python</span>
+      </div>
+    </div>
+
+    <!-- 02 Frameworks -->
+    <div class="svc-card r d1">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <rect x="6" y="6" width="18" height="18" rx="3" fill="#f5f5f0"/>
+        <rect x="28" y="6" width="18" height="18" rx="3" fill="#f5f5f0" opacity=".35"/>
+        <rect x="6" y="28" width="18" height="18" rx="3" fill="#f5f5f0" opacity=".35"/>
+        <rect x="28" y="28" width="18" height="18" rx="3" fill="#f5f5f0" opacity=".65"/>
+      </svg>
+      <span class="svc-num">02</span>
+      <h3 class="svc-name">Frameworks</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">Twig</span>
+        <span class="svc-pill">Bootstrap</span>
+        <span class="svc-pill">Symfony</span>
+      </div>
+    </div>
+
+    <!-- 03 Bases de données -->
+    <div class="svc-card r d2">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <ellipse cx="26" cy="14" rx="18" ry="7" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <path d="M8 14 L8 38 C8 41.9 16.1 45 26 45 C35.9 45 44 41.9 44 38 L44 14" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <path d="M8 26 C8 29.9 16.1 33 26 33 C35.9 33 44 29.9 44 26" stroke="#f5f5f0" stroke-width="1.5" fill="none" opacity=".4"/>
+      </svg>
+      <span class="svc-num">03</span>
+      <h3 class="svc-name">Bases de données</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">SQL</span>
+        <span class="svc-pill">MongoDB</span>
+        <span class="svc-pill">MariaDB</span>
+      </div>
+    </div>
+
+    <!-- 04 Cybersécurité -->
+    <div class="svc-card r">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <path d="M26 6 L44 13 L44 28 C44 37.4 36.1 45.3 26 47 C15.9 45.3 8 37.4 8 28 L8 13 Z" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <path d="M19 26 L24 31 L33 21" stroke="#f5f5f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="svc-num">04</span>
+      <h3 class="svc-name">Cybersécurité</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">Cisco</span>
+        <span class="svc-pill">Kali Linux</span>
+      </div>
+    </div>
+
+    <!-- 05 APIs -->
+    <div class="svc-card r d1">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <circle cx="26" cy="26" r="20" stroke="#f5f5f0" stroke-width="1.5" opacity=".4"/>
+        <path d="M14 26 L38 26 M30 18 L38 26 L30 34" stroke="#f5f5f0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="svc-num">05</span>
+      <h3 class="svc-name">APIs</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">REST API</span>
+        <span class="svc-pill">Postman</span>
+      </div>
+    </div>
+
+    <!-- 06 Outils & Versioning -->
+    <div class="svc-card r d2">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <circle cx="14" cy="14" r="6" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <circle cx="38" cy="14" r="6" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <circle cx="26" cy="38" r="6" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <path d="M14 20 L14 30 Q14 38 20 38 M38 20 L38 30 Q38 38 32 38" stroke="#f5f5f0" stroke-width="1.5" fill="none" opacity=".5"/>
+      </svg>
+      <span class="svc-num">06</span>
+      <h3 class="svc-name">Outils & Versioning</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">GitHub</span>
+        <span class="svc-pill">GitLab</span>
+        <span class="svc-pill">Git</span>
+      </div>
+    </div>
+
+    <!-- 07 Cloud & Infrastructure -->
+    <div class="svc-card r">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <path d="M38 34 C42.4 34 46 30.4 46 26 C46 22 43.1 18.7 39.3 18 C38.4 13.4 34.3 10 29.5 10 C24.5 10 20.3 13.7 19.6 18.5 C16.4 19.3 14 22.3 14 26 C14 30.4 17.6 34 22 34 Z" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <path d="M26 34 L26 44 M20 40 L26 44 L32 40" stroke="#f5f5f0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+      </svg>
+      <span class="svc-num">07</span>
+      <h3 class="svc-name">Cloud & Infrastructure</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">AWS</span>
+        <span class="svc-pill">Infomaniak</span>
+      </div>
+    </div>
+
+    <!-- 08 IDE & Logiciels -->
+    <div class="svc-card r d1" style="grid-column: span 2;">
+      <svg class="svc-icon" viewBox="0 0 52 52" fill="none">
+        <rect x="10" y="6" width="32" height="40" rx="3" stroke="#f5f5f0" stroke-width="1.5" fill="none"/>
+        <path d="M17 18 L35 18 M17 25 L35 25 M17 32 L28 32" stroke="#f5f5f0" stroke-width="1.5" opacity=".6"/>
+      </svg>
+      <span class="svc-num">08</span>
+      <h3 class="svc-name">IDE & Logiciels</h3>
+      <div class="svc-pills">
+        <span class="svc-pill">PHPStorm</span>
+        <span class="svc-pill">VS Code</span>
+        <span class="svc-pill">Visual Studio</span>
+        <span class="svc-pill">Android Studio</span>
+        <span class="svc-pill">UML (Merise / Agile)</span>
+        <span class="svc-pill">Linux</span>
+        <span class="svc-pill">VirtualBox</span>
+        <span class="svc-pill">M365 / Office</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Certifications ── -->
+  <div class="cert-section r">
+    <h3 class="cert-subtitle">Certifications</h3>
+    <div class="cert-body">
+      <div class="cert-stack">
+        <div class="cert-badge"><img src="img/badges/ciscocybersecu.png" alt="Cisco Cybersécurité" /></div>
+        <div class="cert-badge"><img src="img/badges/HTMLCIsco.png" alt="HTML Cisco" /></div>
+        <div class="cert-badge"><img src="img/badges/gestioncybermenace.png" alt="Gestion des cybermenaces" /></div>
+        <div class="cert-badge"><img src="img/badges/introIA.png" alt="Introduction à l'IA" /></div>
+        <div class="cert-badge"><img src="img/badges/IntroDataSciences.png" alt="Introduction Data Sciences" /></div>
+        <div class="cert-badge"><img src="img/badges/css.png" alt="CSS" /></div>
+      </div>
+      <p class="cert-hint">Survolez pour voir les&nbsp;6 certifications</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── PROJETS ────────────────────────────────  -->
+<section class="projects" id="projets">
+  <div class="projects-head">
+    <h2 class="r">Projets<br><em>réalisés.</em></h2>
+    <a href="#contact" class="btn r d1"><span>Travaillons ensemble</span></a>
+  </div>
+  <div class="projects-grid">
+
+    <!-- ── Ligne 1 : Personnel ─── -->
+    <div class="proj-row-label r"><span>Personnel</span></div>
+
+    <!-- CleanCars -->
+    <div class="proj-card r"
+      data-title="CleanCars"
+      data-tags="HTML · CSS · Tailwind"
+      data-category="Personnel"
+      data-desc="CleanCars est un site vitrine de vente de voitures d'occasion conçu avec une interface moderne et épurée. Le projet met en avant une navigation fluide, des fiches véhicules claires et un design responsive réalisé avec Tailwind CSS."
+      data-icon="🚗"
+
+      data-link="projects/cleancars.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#d0d0cc"/>
+          <rect x="60" y="160" width="380" height="120" rx="20" fill="#1a1a1a" opacity=".5"/>
+          <rect x="100" y="100" width="160" height="80" rx="14" fill="#1a1a1a" opacity=".35"/>
+          <rect x="270" y="100" width="130" height="80" rx="14" fill="#1a1a1a" opacity=".35"/>
+          <circle cx="150" cy="295" r="32" fill="#1a1a1a" opacity=".6"/>
+          <circle cx="150" cy="295" r="14" fill="#d0d0cc"/>
+          <circle cx="350" cy="295" r="32" fill="#1a1a1a" opacity=".6"/>
+          <circle cx="350" cy="295" r="14" fill="#d0d0cc"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Tailwind</span>
+      </div>
+      <h3 class="proj-name">CleanCars</h3>
+      <a href="projects/cleancars.html" class="proj-link">Détails →</a>
+    </div>
+
+    <!-- Actualités -->
+    <div class="proj-card r d1"
+      data-title="Actualités"
+      data-tags="Symfony · API Gnews · Bootstrap"
+      data-category="Personnel"
+      data-desc="Application web d'agrégation d'actualités en temps réel. Les articles sont récupérés dynamiquement via l'API GNews et affichés par catégorie. Le projet utilise Symfony pour le back-end et Bootstrap pour une interface responsive et lisible."
+      data-icon="📰"
+
+      data-link="projects/actualites.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#c4c4c0"/>
+          <rect x="60" y="60" width="380" height="280" rx="12" fill="#1a1a1a" opacity=".08"/>
+          <rect x="60" y="60" width="380" height="48" rx="12" fill="#1a1a1a" opacity=".3"/>
+          <rect x="80" y="140" width="160" height="160" rx="6" fill="#1a1a1a" opacity=".35"/>
+          <rect x="260" y="140" width="160" height="28" rx="4" fill="#1a1a1a" opacity=".2"/>
+          <rect x="260" y="178" width="130" height="20" rx="4" fill="#1a1a1a" opacity=".12"/>
+          <rect x="260" y="208" width="140" height="20" rx="4" fill="#1a1a1a" opacity=".12"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">Symfony</span>
+        <span class="tag">API Gnews</span>
+        <span class="tag">Bootstrap</span>
+      </div>
+      <h3 class="proj-name">Actualités</h3>
+      <a href="projects/actualites.html" class="proj-link">Détails →</a>
+    </div>
+
+    <!-- Deuce -->
+    <div class="proj-card r d2"
+      data-title="Deuce"
+      data-tags="Symfony · PWA · Firebase"
+      data-category="Personnel"
+      data-desc="Application de score pour matchs de tennis développée en Progressive Web App. L'utilisateur peut suivre ses parties en temps réel, consulter l'historique de ses matchs et utiliser l'app hors-ligne. Firebase assure la synchronisation des données en temps réel."
+      data-icon="🎾"
+
+      data-link="projects/deuce.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#d8d8d4"/>
+          <!-- Surface du terrain -->
+          <rect x="55" y="55" width="390" height="290" rx="4" fill="#1a1a1a" opacity=".07"/>
+          <!-- Contour extérieur (doubles) -->
+          <rect x="55" y="55" width="390" height="290" stroke="#1a1a1a" stroke-width="2" fill="none" opacity=".45"/>
+          <!-- Lignes de simple -->
+          <line x1="55" y1="110" x2="445" y2="110" stroke="#1a1a1a" stroke-width="1.5" opacity=".35"/>
+          <line x1="55" y1="290" x2="445" y2="290" stroke="#1a1a1a" stroke-width="1.5" opacity=".35"/>
+          <!-- Filet -->
+          <line x1="250" y1="55" x2="250" y2="345" stroke="#1a1a1a" stroke-width="2.5" opacity=".55"/>
+          <!-- Lignes de service -->
+          <line x1="148" y1="110" x2="148" y2="290" stroke="#1a1a1a" stroke-width="1.5" opacity=".3"/>
+          <line x1="352" y1="110" x2="352" y2="290" stroke="#1a1a1a" stroke-width="1.5" opacity=".3"/>
+          <!-- Ligne centrale de service -->
+          <line x1="148" y1="200" x2="352" y2="200" stroke="#1a1a1a" stroke-width="1.5" opacity=".22"/>
+          <!-- Balle de tennis -->
+          <circle cx="185" cy="148" r="20" fill="#1a1a1a" opacity=".55"/>
+          <path d="M176 140 C180 144 180 152 176 156" stroke="#d8d8d4" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M194 140 C190 144 190 152 194 156" stroke="#d8d8d4" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">Symfony</span>
+        <span class="tag">PWA</span>
+        <span class="tag">Firebase</span>
+      </div>
+      <h3 class="proj-name">Deuce</h3>
+      <a href="projects/deuce.html" class="proj-link">Détails →</a>
+    </div>
+
+    <!-- ── Ligne 2 : Scolaire ─── -->
+    <div class="proj-row-label r"><span>Scolaire</span></div>
+
+    <!-- GSB -->
+    <div class="proj-card r"
+      data-title="GSB"
+      data-tags="API REST · XML · Java"
+      data-category="Scolaire"
+      data-desc="Application de gestion des frais professionnels pour le laboratoire Galaxy Swiss Bourdin. Développée en Java avec des échanges de données en XML via une API REST, elle permet aux visiteurs médicaux de soumettre et suivre leurs notes de frais."
+      data-icon="🏥"
+      data-link="projects/scolaire-1.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#d0d4d0"/>
+          <!-- Croix médicale -->
+          <rect x="212" y="78" width="76" height="228" rx="14" fill="#1a1a1a" opacity=".52"/>
+          <rect x="136" y="154" width="228" height="76" rx="14" fill="#1a1a1a" opacity=".52"/>
+          <!-- Halo circulaire -->
+          <circle cx="250" cy="200" r="96" stroke="#1a1a1a" stroke-width="1.5" fill="none" opacity=".18"/>
+          <!-- Éprouvette en bas à droite -->
+          <path d="M390 130 L390 270 Q390 310 360 310 Q330 310 330 270 L330 130 Z" fill="#1a1a1a" opacity=".18"/>
+          <rect x="322" y="118" width="76" height="18" rx="5" fill="#1a1a1a" opacity=".28"/>
+          <ellipse cx="360" cy="288" rx="22" ry="12" fill="#1a1a1a" opacity=".12"/>
+          <!-- Pilule en bas à gauche -->
+          <rect x="52" y="305" width="96" height="38" rx="19" fill="#1a1a1a" opacity=".28"/>
+          <line x1="100" y1="305" x2="100" y2="343" stroke="#d0d4d0" stroke-width="2" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">API REST</span>
+        <span class="tag">XML</span>
+        <span class="tag">Java</span>
+      </div>
+      <h3 class="proj-name">GSB</h3>
+      <a href="projects/scolaire-1.html" class="proj-link">Détails →</a>
+    </div>
+
+    <!-- Conventio -->
+    <div class="proj-card r d1"
+      data-title="Conventio"
+      data-tags="CSS · Symfony · Twig"
+      data-category="Scolaire"
+      data-desc="Application web de digitalisation du processus de convention de stage. Développée avec Symfony et Twig, elle permet la création, le suivi et la validation numérique des conventions, remplaçant les flux papier par un workflow entièrement en ligne."
+      data-icon="📄"
+      data-link="projects/scolaire-2.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#cccdd2"/>
+          <!-- Document principal -->
+          <rect x="100" y="52" width="180" height="240" rx="10" fill="#1a1a1a" opacity=".1"/>
+          <rect x="100" y="52" width="180" height="38" rx="10" fill="#1a1a1a" opacity=".28"/>
+          <!-- Lignes de formulaire -->
+          <rect x="122" y="112" width="136" height="11" rx="3" fill="#1a1a1a" opacity=".2"/>
+          <rect x="122" y="136" width="106" height="11" rx="3" fill="#1a1a1a" opacity=".14"/>
+          <rect x="122" y="160" width="124" height="11" rx="3" fill="#1a1a1a" opacity=".14"/>
+          <rect x="122" y="184" width="90" height="11" rx="3" fill="#1a1a1a" opacity=".12"/>
+          <rect x="122" y="208" width="118" height="11" rx="3" fill="#1a1a1a" opacity=".12"/>
+          <rect x="122" y="232" width="80" height="11" rx="3" fill="#1a1a1a" opacity=".1"/>
+          <!-- Flèche de transformation -->
+          <path d="M310 196 L374 196" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+          <path d="M358 180 L374 196 L358 212" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".45"/>
+          <!-- Tampon / validation numérique -->
+          <circle cx="414" cy="280" r="44" fill="#1a1a1a" opacity=".32"/>
+          <path d="M392 280 L407 297 L438 264" stroke="#cccdd2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Document numérique (cible de la flèche) -->
+          <rect x="310" y="100" width="136" height="160" rx="10" fill="#1a1a1a" opacity=".08"/>
+          <rect x="310" y="100" width="136" height="30" rx="10" fill="#1a1a1a" opacity=".18"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Symfony</span>
+        <span class="tag">Twig</span>
+      </div>
+      <h3 class="proj-name">Conventio</h3>
+      <a href="projects/scolaire-2.html" class="proj-link">Détails →</a>
+    </div>
+
+    <!-- Forum Cybersécurité -->
+    <div class="proj-card r d2"
+      data-title="Forum Cybersécurité"
+      data-tags="HTML · Kali Linux"
+      data-category="Scolaire"
+      data-desc="Forum de sensibilisation à la cybersécurité réalisé dans le cadre du BTS SIO. Le projet présente les principales menaces informatiques, les bonnes pratiques de défense et des démonstrations réalisées avec Kali Linux."
+      data-icon="🔒"
+
+      data-link="projects/scolaire-3.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#c8cac8"/>
+          <!-- Bouclier -->
+          <path d="M250 44 L388 108 L388 224 C388 308 250 368 250 368 C250 368 112 308 112 224 L112 108 Z" fill="#1a1a1a" opacity=".5"/>
+          <!-- Corps du cadenas -->
+          <rect x="210" y="196" width="80" height="62" rx="10" fill="#c8cac8" opacity=".85"/>
+          <!-- Anse du cadenas -->
+          <path d="M222 196 C222 166 278 166 278 196" stroke="#c8cac8" stroke-width="12" fill="none" stroke-linecap="round" opacity=".85"/>
+          <!-- Trou de la serrure -->
+          <circle cx="250" cy="223" r="10" fill="#1a1a1a" opacity=".45"/>
+          <rect x="245" y="228" width="10" height="16" rx="3" fill="#1a1a1a" opacity=".45"/>
+          <!-- Lignes terminal en fond haut-gauche -->
+          <rect x="44" y="68" width="52" height="8" rx="2" fill="#1a1a1a" opacity=".12"/>
+          <rect x="44" y="86" width="34" height="8" rx="2" fill="#1a1a1a" opacity=".08"/>
+          <rect x="44" y="104" width="44" height="8" rx="2" fill="#1a1a1a" opacity=".08"/>
+          <!-- Lignes terminal bas-droite -->
+          <rect x="404" y="288" width="52" height="8" rx="2" fill="#1a1a1a" opacity=".12"/>
+          <rect x="404" y="306" width="36" height="8" rx="2" fill="#1a1a1a" opacity=".08"/>
+          <rect x="404" y="324" width="46" height="8" rx="2" fill="#1a1a1a" opacity=".08"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">Kali Linux</span>
+      </div>
+      <h3 class="proj-name">Forum Cybersécurité</h3>
+      <a href="projects/scolaire-3.html" class="proj-link">Détails →</a>
+    </div>
+
+    <!-- ── Ligne 3 : Stages ─── -->
+    <div class="proj-row-label r"><span>Professionnel — Stages</span></div>
+
+    <!-- Stage Gigathink — janvier-mars 2026 -->
+    <div class="proj-card r"
+      data-title="Gigathink"
+      data-tags="Vue 3 · Laravel · Figma"
+      data-category="Professionnel"
+      data-desc="Stage de développement full-stack chez Gigathink (janvier–mars 2026). Participation à la conception et au développement d'interfaces avec Vue 3, back-end Laravel, et maquettage sous Figma."
+      data-icon="💼"
+
+      data-link="projects/stage-1.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#cacccf"/>
+          <!-- Fenêtre application -->
+          <rect x="58" y="56" width="384" height="262" rx="14" fill="#1a1a1a" opacity=".1"/>
+          <rect x="58" y="56" width="384" height="36" rx="14" fill="#1a1a1a" opacity=".3"/>
+          <!-- Traffic lights -->
+          <circle cx="90" cy="74" r="7" fill="#1a1a1a" opacity=".25"/>
+          <circle cx="113" cy="74" r="7" fill="#1a1a1a" opacity=".25"/>
+          <circle cx="136" cy="74" r="7" fill="#1a1a1a" opacity=".25"/>
+          <!-- Sidebar -->
+          <rect x="58" y="92" width="96" height="226" rx="0" fill="#1a1a1a" opacity=".08"/>
+          <!-- Nav items sidebar -->
+          <rect x="74" y="116" width="64" height="11" rx="3" fill="#1a1a1a" opacity=".2"/>
+          <rect x="74" y="140" width="52" height="11" rx="3" fill="#1a1a1a" opacity=".14"/>
+          <rect x="74" y="164" width="58" height="11" rx="3" fill="#1a1a1a" opacity=".14"/>
+          <rect x="74" y="188" width="44" height="11" rx="3" fill="#1a1a1a" opacity=".12"/>
+          <!-- Content area -->
+          <rect x="172" y="108" width="246" height="80" rx="8" fill="#1a1a1a" opacity=".14"/>
+          <rect x="172" y="204" width="112" height="60" rx="8" fill="#1a1a1a" opacity=".14"/>
+          <rect x="298" y="204" width="120" height="60" rx="8" fill="#1a1a1a" opacity=".1"/>
+          <!-- Figma-like design shapes -->
+          <circle cx="380" cy="330" r="28" fill="#1a1a1a" opacity=".2"/>
+          <rect x="90" y="316" width="72" height="40" rx="6" fill="#1a1a1a" opacity=".12"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">Vue 3</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">Figma</span>
+      </div>
+      <h3 class="proj-name">Gigathink</h3>
+      <span style="display:block;font-size:.72rem;font-weight:500;opacity:.45;margin-top:-10px;margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase;">Janvier – Mars 2026</span>
+      <a href="projects/stage-1.html" class="proj-link">DÉTAILS →</a>
+    </div>
+
+    <!-- Stage Gigathink — juin 2025 -->
+    <div class="proj-card r d1"
+      data-title="Gigathink"
+      data-tags="JSON · Tailwind CSS · Git"
+      data-category="Professionnel"
+      data-desc="Stage de développement chez Gigathink (juin 2025). Travail sur des flux de données JSON, intégration front-end avec Tailwind CSS et gestion de versions via Git."
+      data-icon="💼"
+
+      data-link="projects/stage-2.html">
+      <div class="proj-thumb">
+        <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="400" fill="#c4c6c8"/>
+          <!-- Branche principale Git -->
+          <line x1="250" y1="52" x2="250" y2="348" stroke="#1a1a1a" stroke-width="3" opacity=".38" stroke-linecap="round"/>
+          <!-- Commits principaux -->
+          <circle cx="250" cy="90" r="11" fill="#1a1a1a" opacity=".55"/>
+          <circle cx="250" cy="200" r="11" fill="#1a1a1a" opacity=".55"/>
+          <circle cx="250" cy="310" r="11" fill="#1a1a1a" opacity=".55"/>
+          <!-- Feature branch droite -->
+          <path d="M250 130 C320 130 355 178 355 200 C355 222 320 268 250 268" stroke="#1a1a1a" stroke-width="2" fill="none" opacity=".3" stroke-linecap="round"/>
+          <circle cx="355" cy="200" r="9" fill="#1a1a1a" opacity=".38"/>
+          <!-- Hotfix branch gauche -->
+          <path d="M250 148 C180 148 152 176 152 200 C152 224 180 252 250 252" stroke="#1a1a1a" stroke-width="1.5" fill="none" opacity=".2" stroke-linecap="round"/>
+          <circle cx="152" cy="200" r="8" fill="#1a1a1a" opacity=".25"/>
+          <!-- Labels JSON (lignes de code) -->
+          <rect x="50" y="82" width="62" height="10" rx="2" fill="#1a1a1a" opacity=".14"/>
+          <rect x="50" y="100" width="44" height="10" rx="2" fill="#1a1a1a" opacity=".1"/>
+          <!-- Labels droite -->
+          <rect x="390" y="190" width="62" height="10" rx="2" fill="#1a1a1a" opacity=".14"/>
+          <rect x="390" y="208" width="44" height="10" rx="2" fill="#1a1a1a" opacity=".1"/>
+        </svg>
+      </div>
+      <div class="proj-tags">
+        <span class="tag">JSON</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Git</span>
+      </div>
+      <h3 class="proj-name">Gigathink</h3>
+      <span style="display:block;font-size:.72rem;font-weight:500;opacity:.45;margin-top:-10px;margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase;">Juin 2025</span>
+      <a href="projects/stage-2.html" class="proj-link">DÉTAILS →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CONTACT FORM ──────────────────────────  -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+
+    <div class="contact-left">
+      <span class="process-eyebrow r">Contact</span>
+      <h2 class="contact-title r d1">Travaillons<br><em>ensemble.</em></h2>
+      <p class="contact-sub r d2">Un projet, une idée, une question ?<br>Écris-moi, je réponds sous 24h.</p>
+    </div>
+
+    <form class="contact-form r d1" action="https://formspree.io/f/xaqwnnza" method="POST" novalidate>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jean@exemple.com" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject" placeholder="De quoi s'agit-il ?" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Décris ton projet ou ta demande…" required></textarea>
+      </div>
+
+      <button type="submit" class="btn contact-submit">
+        <span>Envoyer le message</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────  -->
+<footer>
+  <div class="footer-card">
+    <div class="footer-card-inner">
+
+      <div class="footer-top">
+        <div>
+          <span class="foot-col-label">Navigation</span>
+          <ul class="foot-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="foot-col-label">Projets</span>
+          <ul class="foot-links">
+            <li><a href="projects/deuce.html">Deuce</a></li>
+            <li><a href="projects/cleancars.html">CleanCars</a></li>
+            <li><a href="projects/actualites.html">Actualités</a></li>
+            <li><a href="projects/scolaire-1.html">GSB</a></li>
+            <li><a href="projects/stage-1.html">Conventio</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="foot-col-label">Légal</span>
+          <ul class="foot-links">
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="foot-col-label">Contact</span>
+          <ul class="foot-links">
+            <li><a href="mailto:hello@paco.dev">hello@paco.dev</a></li>
+            <li><a href="https://www.linkedin.com/in/paco-hybord-58187232a/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/pacobrnt" target="_blank" rel="noopener">GitHub ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-brand">HYBORD</div>
+    <p class="footer-copy">© 2025 Paco Hybord — Portfolio BTS SIO SLAM · Épreuve E5 · Annecy</p>
+  </div>
+</footer>
+
+<!-- ─── MODAL PROJET ──────────────────────────  -->
+<div id="proj-modal" aria-hidden="true">
+  <div id="proj-modal-overlay"></div>
+  <div id="proj-modal-panel">
+    <button id="proj-modal-close" aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div id="proj-modal-content">
+      <span id="modal-category"></span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-tags"></div>
+      <p id="modal-desc"></p>
+      <a id="modal-link" href="#" class="btn"><span>Voir le projet</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7 L13 7 M8 2 L13 7 L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="proj-cursor">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 12 L19 12 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
