@@ -3,12 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projet scolaire 2 — Paco</title>
+  <title>Conventio — Paco</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="project.css" />
+  <style>
+    .proj-hero {
+      min-height: 40vh;
+      padding-top: 120px;
+      padding-bottom: 56px;
+    }
+
+    /* ── Sections contextuelles ── */
+    .conv-section {
+      border-top: 1px solid rgba(26,26,26,.1);
+      padding-top: 64px;
+      margin-top: 16px;
+    }
+    .conv-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.02em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .conv-section-title em { font-style: italic; }
+    .conv-section-sub {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: .32;
+      display: block;
+      margin-bottom: 48px;
+    }
+
+    /* ── Grid image ── */
+    .proj-content-grid-img {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .proj-content-grid-img .proj-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-content-grid-img .proj-img-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-content-grid-img .proj-img-block img {
+      flex: 1;
+      object-fit: cover;
+    }
+
+    /* ── Bloc image ── */
+    .proj-img-block {
+      border: 1.5px solid rgba(26,26,26,.1);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .proj-img-block img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .proj-img-caption {
+      padding: 14px 20px;
+      font-size: .7rem;
+      color: var(--black);
+      opacity: .38;
+      letter-spacing: .06em;
+      border-top: 1px solid rgba(26,26,26,.08);
+    }
+
+    /* ── Scrum cards ── */
+    .scrum-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .scrum-card {
+      background: rgba(26,26,26,.03);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .scrum-card-tag {
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .scrum-card-title {
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .scrum-card-desc {
+      font-size: .76rem;
+      color: var(--black);
+      opacity: .45;
+      line-height: 1.6;
+    }
+
+    /* ── Workflow cycle de vie ── */
+    .workflow-steps {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 28px;
+    }
+    .workflow-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .workflow-step + .workflow-step::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      height: 1.5px;
+      width: 100%;
+      background: rgba(26,26,26,.12);
+      transform: translateX(-50%);
+    }
+    .workflow-step-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(26,26,26,.15);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    .workflow-step-dot-inner {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(26,26,26,.25);
+    }
+    .workflow-step.wf-active .workflow-step-dot {
+      border-color: var(--black);
+    }
+    .workflow-step.wf-active .workflow-step-dot-inner {
+      background: var(--black);
+    }
+    .workflow-step-label {
+      font-size: .65rem;
+      color: var(--black);
+      opacity: .45;
+      text-align: center;
+      letter-spacing: .02em;
+      padding: 0 4px;
+      line-height: 1.45;
+    }
+    .workflow-step-label small {
+      opacity: .55;
+      font-size: .6rem;
+      display: block;
+    }
+
+    /* ── GitHub kanban ── */
+    .kanban-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .kanban-col {
+      background: rgba(26,26,26,.03);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .kanban-col-label {
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: .35;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kanban-col-label::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--kanban-color, #1a1a1a);
+      opacity: 1;
+      flex-shrink: 0;
+    }
+    .kanban-item {
+      background: var(--white);
+      border: 1px solid rgba(26,26,26,.1);
+      border-radius: 7px;
+      padding: 10px 12px;
+      font-size: .75rem;
+      color: var(--black);
+      opacity: .6;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .kanban-item:last-child { margin-bottom: 0; }
+
+    /* ── Décalage images carrousel (masque barre navigateur) ── */
+    .proj-carousel-slide img {
+      object-position: center 12%;
+    }
+
+    /* ── Onglets rôles ── */
+    .conv-tabs-wrap {
+      max-width: 1100px;
+      margin: 0 auto 20px;
+    }
+    .conv-tabs {
+      display: inline-flex;
+      gap: 4px;
+      background: rgba(26,26,26,.07);
+      border-radius: 10px;
+      padding: 4px;
+    }
+    .conv-tab {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--black);
+      opacity: .45;
+      background: transparent;
+      border: none;
+      border-radius: 7px;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: background .22s, opacity .22s, color .22s;
+    }
+    .conv-tab.active {
+      background: var(--white);
+      opacity: 1;
+      box-shadow: 0 1px 4px rgba(26,26,26,.1);
+    }
+    .conv-tab:hover:not(.active) { opacity: .75; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .proj-content-grid-img { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .scrum-grid { grid-template-columns: 1fr 1fr; }
+      .conv-section { padding-top: 48px; }
+      .conv-section-sub { margin-bottom: 32px; }
+      .kanban-cols { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .scrum-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,96 +295,509 @@
   <a href="../index.html" class="proj-nav-logo">Paco.</a>
 </nav>
 
+<!-- ─── HERO ───────────────────────────────── -->
 <section class="proj-hero">
   <div class="proj-hero-inner">
-    <span class="proj-eyebrow">Scolaire — BTS SIO</span>
-    <h1>Projet <em>scolaire 2</em></h1>
+    <span class="proj-eyebrow">Scolaire — BTS SIO SLAM · 2025 → 2026</span>
+    <h1><em>Conventio</em></h1>
     <div class="proj-hero-meta">
       <div class="proj-hero-meta-item">
         <span class="proj-hero-meta-label">Type</span>
-        <span class="proj-hero-meta-value">Projet scolaire</span>
+        <span class="proj-hero-meta-value">Application Web</span>
       </div>
       <div class="proj-hero-meta-item">
         <span class="proj-hero-meta-label">Stack</span>
-        <span class="proj-hero-meta-value">À compléter</span>
+        <span class="proj-hero-meta-value">Symfony 7.3 · PHP 8.2 · MySQL</span>
       </div>
       <div class="proj-hero-meta-item">
-        <span class="proj-hero-meta-label">Statut</span>
-        <span class="proj-hero-meta-value">À compléter</span>
+        <span class="proj-hero-meta-label">Méthode</span>
+        <span class="proj-hero-meta-value">Agile Scrum</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Équipe</span>
+        <span class="proj-hero-meta-value">Projet à deux</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Client</span>
+        <span class="proj-hero-meta-value">Lycée Gabriel Fauré</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Code source</span>
+        <a class="proj-hero-meta-value proj-hero-link" href="https://github.com/hsn00000/ConventionStage" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ─── CARROUSEL ──────────────────────────── -->
+<!-- ─── CARROUSEL À ONGLETS ─────────────────── -->
 <div class="proj-carousel">
-  <div class="proj-carousel-viewport">
-    <div class="proj-carousel-track">
 
-      <div class="proj-carousel-slide">
-        <svg viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1280" height="720" fill="#c8c8c4"/>
-          <rect x="160" y="80" width="240" height="560" rx="16" fill="#1a1a1a" opacity=".45"/>
-          <rect x="460" y="160" width="660" height="280" rx="16" fill="#1a1a1a" opacity=".2"/>
-          <rect x="460" y="460" width="300" height="140" rx="12" fill="#1a1a1a" opacity=".12"/>
-          <rect x="780" y="460" width="340" height="140" rx="12" fill="#1a1a1a" opacity=".12"/>
-        </svg>
-      </div>
-
-      <div class="proj-carousel-slide">
-        <svg viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1280" height="720" fill="#d0d0cc"/>
-          <rect x="160" y="100" width="960" height="520" rx="20" fill="#1a1a1a" opacity=".06"/>
-          <circle cx="380" cy="280" r="120" fill="#1a1a1a" opacity=".18"/>
-          <rect x="560" y="160" width="520" height="20" rx="4" fill="#1a1a1a" opacity=".3"/>
-          <rect x="560" y="200" width="400" height="14" rx="3" fill="#1a1a1a" opacity=".15"/>
-          <rect x="560" y="224" width="440" height="14" rx="3" fill="#1a1a1a" opacity=".15"/>
-          <rect x="560" y="248" width="360" height="14" rx="3" fill="#1a1a1a" opacity=".15"/>
-          <rect x="560" y="310" width="140" height="40" rx="8" fill="#1a1a1a" opacity=".6"/>
-        </svg>
-      </div>
-
+  <!-- Onglets rôles -->
+  <div class="conv-tabs-wrap">
+    <div class="conv-tabs">
+      <button class="conv-tab active" data-role="etudiant">Étudiant</button>
+      <button class="conv-tab" data-role="professeur">Professeur</button>
+      <button class="conv-tab" data-role="ddf">DDF</button>
     </div>
   </div>
 
-  <button class="proj-carousel-btn proj-carousel-prev" aria-label="Précédent">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-  <button class="proj-carousel-btn proj-carousel-next" aria-label="Suivant">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
+  <div class="proj-carousel-browser">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text" id="convUrl">conventio.gabriel-faure.fr/etudiant</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport" id="convViewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l" id="convPrevTap"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r" id="convNextTap"></button>
+      <div class="proj-carousel-track" id="convTrack">
 
-  <span class="proj-carousel-counter"></span>
+        <!-- Vue Étudiant -->
+        <div class="proj-carousel-slide conv-slide active" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveHome.png" alt="Vue étudiant — accueil">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveHome2.png" alt="Vue étudiant — accueil 2">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveConvention.png" alt="Vue étudiant — convention">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveConventionDescription.png" alt="Vue étudiant — description convention">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveConventionDetail2.png" alt="Vue étudiant — détail convention">
+        </div>
 
-  <div class="proj-carousel-dots">
-    <button class="proj-carousel-dot active" aria-label="Slide 1"></button>
-    <button class="proj-carousel-dot" aria-label="Slide 2"></button>
+        <!-- Vue Professeur -->
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profdashboard.png" alt="Vue professeur — tableau de bord">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profdashboard2.png" alt="Vue professeur — tableau de bord 2">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profconventionetudiant.png" alt="Vue professeur — conventions étudiants">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profvaliderconvention.png" alt="Vue professeur — valider convention">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profvueapresvalidation.png" alt="Vue professeur — après validation">
+        </div>
+
+        <!-- Vue DDF -->
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/admindashboard.png" alt="Vue DDF — tableau de bord">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/admindashboard2.png" alt="Vue DDF — tableau de bord 2">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/admindetailconvention.png" alt="Vue DDF — détail convention">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/adminacceptconvention.png" alt="Vue DDF — accepter convention">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/adminconventionvalider.png" alt="Vue DDF — convention validée">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots" id="convDots"></div>
+    <span class="proj-carousel-counter" id="convCounter">01 / 02</span>
   </div>
 </div>
 
-<section class="proj-details">
-  <div class="proj-details-inner">
-    <div>
-      <h2>Le <em>projet</em></h2>
-      <p>Projet réalisé dans le cadre du BTS SIO option SLAM. Les détails de ce projet seront complétés prochainement.</p>
-    </div>
-    <div>
-      <h2>Technologies <em>utilisées</em></h2>
-      <div class="proj-stack">
-        <span>À compléter</span>
+<!-- ─── CONTENU ───────────────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <!-- À propos + Stack -->
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>Conventio</strong> est une application web de gestion dématérialisée des conventions de stage, développée pour le <strong>Lycée Gabriel Fauré</strong>. Elle remplace un processus entièrement papier en centralisant la création, la validation et la signature des conventions entre les quatre acteurs clés : l'étudiant, le tuteur en entreprise, le professeur référent et l'administration (DDF).
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Ce projet représente ma montée en compétences sur <strong>Symfony 7.3</strong> avec une architecture multi-rôles avancée, un moteur de workflow pour le cycle de vie des conventions, l'intégration de l'<strong>API YouSign</strong> pour la signature électronique, et un système d'emails transactionnels sécurisés avec liens tokenisés.
+        </p>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony">
+            Symfony 7.3 — PHP 8.2
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            MySQL & Doctrine ORM
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+            Bootstrap 5.3
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">✉</span>
+            Symfony Mailer
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">⟳</span>
+            Symfony Workflow
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">✍</span>
+            YouSign API
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">◈</span>
+            Phosphor Icons · Asset Mapper
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Fonctionnalités + Architecture -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Fonctionnalités clés</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Initiation de convention par l'étudiant avec envoi automatique d'un lien sécurisé au tuteur.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Formulaire tokenisé côté entreprise — accès sans compte, lien à usage unique.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Workflow d'état complet : initié → complété → validé prof → validé DDF → signé.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Tableaux de bord distincts par rôle (étudiant, professeur, DDF, admin).
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Validation pédagogique par le professeur référent avec notifications email.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Signature électronique intégrée via l'API YouSign.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Gestion des classes, niveaux et affectation des professeurs référents (back-office admin).
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Emails HTML transactionnels avec templates responsive.
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Architecture par module</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">Auth</span>
+            <div>
+              <div class="proj-arch-item-title">Authentification</div>
+              <div class="proj-arch-item-desc">Inscription multi-rôle, connexion, reset mot de passe, vérification email.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Conv.</span>
+            <div>
+              <div class="proj-arch-item-title">Convention</div>
+              <div class="proj-arch-item-desc">Création, suivi du workflow, accès par token pour le tuteur.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Valid.</span>
+            <div>
+              <div class="proj-arch-item-title">Validation</div>
+              <div class="proj-arch-item-desc">Validation pédagogique (professeur) et administrative (DDF).</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f43f5e">Sign.</span>
+            <div>
+              <div class="proj-arch-item-title">Signature</div>
+              <div class="proj-arch-item-desc">Intégration YouSign — demande et suivi de signature électronique.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#64748b">Admin</span>
+            <div>
+              <div class="proj-arch-item-title">Administration</div>
+              <div class="proj-arch-item-desc">Gestion des classes, niveaux, professeurs référents.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cycle de vie -->
+    <div class="proj-block">
+      <span class="proj-block-title">Cycle de vie d'une convention</span>
+      <div class="workflow-steps">
+        <div class="workflow-step wf-active">
+          <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
+          <div class="workflow-step-label">Initié<small>Étudiant</small></div>
+        </div>
+        <div class="workflow-step wf-active">
+          <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
+          <div class="workflow-step-label">Complété<small>Tuteur (token)</small></div>
+        </div>
+        <div class="workflow-step wf-active">
+          <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
+          <div class="workflow-step-label">Validé prof<small>Professeur</small></div>
+        </div>
+        <div class="workflow-step wf-active">
+          <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
+          <div class="workflow-step-label">Validé DDF<small>Administration</small></div>
+        </div>
+        <div class="workflow-step wf-active">
+          <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
+          <div class="workflow-step-label">Signé<small>YouSign</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outils -->
+    <div class="proj-block">
+      <span class="proj-block-title">Outils & Librairies</span>
+      <div class="proj-tools-grid">
+        <div class="proj-tool-card" style="--tool-color:#6366f1">
+          <div class="proj-tool-card-name">Doctrine ORM</div>
+          <div class="proj-tool-card-desc">Migrations & Entités (STI User → Étudiant / Professeur / Tuteur)</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#f97316">
+          <div class="proj-tool-card-name">Symfony Workflow</div>
+          <div class="proj-tool-card-desc">Machine à états du cycle de vie des conventions</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#0ea5e9">
+          <div class="proj-tool-card-name">Symfony Mailer</div>
+          <div class="proj-tool-card-desc">Emails transactionnels HTML table-based</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#1a1a1a">
+          <div class="proj-tool-card-name">Symfony Security</div>
+          <div class="proj-tool-card-desc">Contrôle d'accès par rôle (Voter, IS_AUTHENTICATED)</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#10b981">
+          <div class="proj-tool-card-name">YouSign API</div>
+          <div class="proj-tool-card-desc">Signature électronique légalement reconnue</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#8b5cf6">
+          <div class="proj-tool-card-name">Twig</div>
+          <div class="proj-tool-card-desc">Templates avec héritage, blocks et macros</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#f59e0b">
+          <div class="proj-tool-card-name">Asset Mapper</div>
+          <div class="proj-tool-card-desc">Bundling ES6 moderne sans Webpack</div>
+        </div>
+        <div class="proj-tool-card" style="--tool-color:#64748b">
+          <div class="proj-tool-card-name">Phosphor Icons</div>
+          <div class="proj-tool-card-desc">Bibliothèque d'icônes SVG cohérente</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Méthode Agile ────────────────────── -->
+    <div class="conv-section">
+      <h2 class="conv-section-title">Un projet <em>format entreprise</em></h2>
+      <span class="conv-section-sub">Méthode Agile Scrum · Projet à deux</span>
+
+      <div class="proj-content-grid-2-equal">
+
+        <div class="proj-block">
+          <span class="proj-block-title">Approche Scrum</span>
+          <p class="proj-about-text">
+            Conventio a été conduit comme un <strong>vrai projet professionnel</strong>, en appliquant rigoureusement la méthode <strong>Agile Scrum</strong> tout au long du développement. Des mini-réunions régulières nous permettaient de faire le point : où on en était, ce qu'on allait faire ensuite, et de lever les blocages au plus tôt.
+          </p>
+          <div class="scrum-grid">
+            <div class="scrum-card">
+              <span class="scrum-card-tag" style="background:#6366f1">Sprint</span>
+              <div class="scrum-card-title">Cycles itératifs</div>
+              <div class="scrum-card-desc">Développement découpé en sprints, avec des objectifs définis et livrables à chaque itération.</div>
+            </div>
+            <div class="scrum-card">
+              <span class="scrum-card-tag" style="background:#10b981">Stand-up</span>
+              <div class="scrum-card-title">Points réguliers</div>
+              <div class="scrum-card-desc">Réunions courtes pour synchroniser l'équipe : avancement, prochaines tâches, blocages identifiés.</div>
+            </div>
+            <div class="scrum-card">
+              <span class="scrum-card-tag" style="background:#f59e0b">Review</span>
+              <div class="scrum-card-title">Revues de sprint</div>
+              <div class="scrum-card-desc">Démonstration des fonctionnalités livrées et ajustement du backlog pour l'itération suivante.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-block">
+          <span class="proj-block-title">Organisation avec GitHub Projects</span>
+          <p class="proj-about-text" style="margin-bottom:20px">
+            Pour piloter le travail à deux, nous avons utilisé <strong>GitHub Projects</strong> en mode board Kanban. Chaque fonctionnalité était tracée sous forme de draft ou d'issue, déplacée entre <em>Todo</em>, <em>In Progress</em> et <em>Done</em> au fil de l'avancement — ce qui nous donnait une vision claire et partagée du backlog à tout moment.
+          </p>
+          <div class="kanban-cols">
+            <div class="kanban-col">
+              <div class="kanban-col-label" style="--kanban-color:#64748b">Todo</div>
+              <div class="kanban-item">Intégration YouSign</div>
+              <div class="kanban-item">Export PDF convention</div>
+            </div>
+            <div class="kanban-col">
+              <div class="kanban-col-label" style="--kanban-color:#f59e0b">In Progress</div>
+              <div class="kanban-item">Dashboard DDF</div>
+              <div class="kanban-item">Emails tokenisés</div>
+            </div>
+            <div class="kanban-col">
+              <div class="kanban-col-label" style="--kanban-color:#10b981">Done</div>
+              <div class="kanban-item">Workflow Symfony</div>
+              <div class="kanban-item">Auth multi-rôles</div>
+              <div class="kanban-item">Formulaire tuteur</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Screenshot GitHub Projects -->
+      <div class="proj-img-block" style="margin-top:24px">
+        <img src="../img/projets/conventio/git.png" alt="GitHub Projects — Conventio">
+        <div class="proj-img-caption">Board GitHub Projects du projet Conventio</div>
+      </div>
+    </div>
+
+    <!-- ─── Réunions DDF ─────────────────────── -->
+    <div class="conv-section">
+      <h2 class="conv-section-title">Réunions avec <em>la DDF</em></h2>
+      <span class="conv-section-sub">Conception & modélisation avec le client</span>
+
+      <div class="proj-content-grid-img">
+        <div class="proj-block">
+          <span class="proj-block-title">Travailler avec le client réel</span>
+          <p class="proj-about-text">
+            Nous avons tenu <strong>plusieurs réunions directement avec la DDF de l'établissement</strong> (Direction des Finances et des Formations) pour recueillir les besoins réels et affiner le périmètre de l'application. Ces échanges nous ont permis de co-construire le <strong>diagramme de classe</strong>, de valider les rôles et les transitions du workflow, et de nous assurer que chaque écran correspondait aux attentes concrètes de l'équipe administrative.
+          </p>
+          <p class="proj-about-text" style="margin-top:16px">
+            Travailler directement avec l'équipe qui allait utiliser l'outil au quotidien a considérablement orienté nos choix d'architecture et de design. Un projet ancré dans une réalité terrain, pas seulement dans un cahier des charges.
+          </p>
+        </div>
+
+        <div class="proj-img-block">
+          <img src="../img/projets/conventio/diagram.png" alt="Diagramme de classe — Conventio">
+          <div class="proj-img-caption">Diagramme de classe élaboré lors des réunions avec la DDF</div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
 
+<!-- ─── CTA ───────────────────────────────── -->
 <section class="proj-cta">
-  <p>Intéressé par ce projet ?</p>
-  <a href="../index.html#contact" class="btn"><span>Me contacter</span></a>
+  <p>Déployé pour le<br>Lycée Gabriel Fauré.</p>
 </section>
 
-<script src="project.js"></script>
+<script>
+(function () {
+  const tabs     = Array.from(document.querySelectorAll('.conv-tab'));
+  const allSlides = Array.from(document.querySelectorAll('.conv-slide'));
+  const dotsWrap = document.getElementById('convDots');
+  const counter  = document.getElementById('convCounter');
+  const prevTap  = document.getElementById('convPrevTap');
+  const nextTap  = document.getElementById('convNextTap');
+  const urlLabel = document.getElementById('convUrl');
+
+  const urlMap = {
+    etudiant:   'conventio.gabriel-faure.fr/etudiant',
+    professeur: 'conventio.gabriel-faure.fr/professeur',
+    ddf:        'conventio.gabriel-faure.fr/ddf'
+  };
+
+  let currentRole = 'etudiant';
+  let currentIdx  = 0;
+  let roleSlides  = [];
+
+  function buildDots(slides) {
+    dotsWrap.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot  = document.createElement('button');
+      dot.className = 'proj-carousel-dot' + (i === 0 ? ' active' : '');
+      const fill = document.createElement('span');
+      fill.className = 'proj-carousel-dot-fill';
+      dot.appendChild(fill);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  function goTo(i) {
+    roleSlides[currentIdx].classList.remove('active');
+    dotsWrap.children[currentIdx].classList.remove('active');
+    currentIdx = (i + roleSlides.length) % roleSlides.length;
+    roleSlides[currentIdx].classList.add('active');
+    dotsWrap.children[currentIdx].classList.add('active');
+    const n = String(roleSlides.length).padStart(2, '0');
+    counter.textContent = String(currentIdx + 1).padStart(2, '0') + ' / ' + n;
+  }
+
+  function switchRole(role) {
+    // Masquer tous les slides
+    allSlides.forEach(s => {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    });
+
+    // Afficher les slides du rôle
+    roleSlides = allSlides.filter(s => s.dataset.role === role);
+    roleSlides.forEach(s => { s.style.display = ''; });
+
+    // Mettre à jour les onglets
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.role === role));
+
+    currentRole = role;
+    currentIdx  = 0;
+    roleSlides[0].classList.add('active');
+    urlLabel.textContent = urlMap[role];
+
+    buildDots(roleSlides);
+    const n = String(roleSlides.length).padStart(2, '0');
+    counter.textContent = '01 / ' + n;
+  }
+
+  // Init
+  switchRole('etudiant');
+
+  tabs.forEach(t => t.addEventListener('click', () => switchRole(t.dataset.role)));
+  prevTap.addEventListener('click', () => goTo(currentIdx - 1));
+  nextTap.addEventListener('click', () => goTo(currentIdx + 1));
+
+  // Swipe tactile
+  const viewport = document.getElementById('convViewport');
+  let startX = 0;
+  viewport.addEventListener('pointerdown', e => { startX = e.clientX; });
+  viewport.addEventListener('pointerup',   e => {
+    const delta = e.clientX - startX;
+    if (Math.abs(delta) > 40) goTo(currentIdx + (delta < 0 ? 1 : -1));
+  });
+})();
+</script>
 </body>
 </html>

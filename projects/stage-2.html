@@ -24,7 +24,69 @@
       box-sizing: border-box;
     }
 
-    /* Bloc image (internationalisation / analyse) */
+    /* Arch list cards (liste projets) */
+    .proj-arch-list-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .proj-arch-list-cards .proj-arch-item {
+      display: grid !important;
+      grid-template-columns: 112px 1fr;
+      column-gap: 16px;
+      align-items: start;
+      background: rgba(26,26,26,.03);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .proj-arch-list-cards .proj-arch-tag { justify-self: start; }
+
+    /* Scrum row */
+    .proj-arch-list-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .proj-arch-list-row .proj-arch-item {
+      display: flex !important;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(26,26,26,.03);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .proj-arch-list-row .proj-arch-tag { align-self: flex-start; }
+
+    /* Séparateur de section */
+    .stage-section {
+      border-top: 1px solid rgba(26,26,26,.1);
+      padding-top: 64px;
+      margin-top: 16px;
+    }
+    .stage-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.02em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .stage-section-title em { font-style: italic; }
+    .stage-section-sub {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: .32;
+      display: block;
+      margin-bottom: 48px;
+    }
+
+    /* Bloc image */
     .proj-img-block {
       border-radius: 16px;
       overflow: hidden;
@@ -60,14 +122,13 @@
     .proj-page-tag::before {
       content: '';
       display: block;
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--page-color, #1a1a1a);
       flex-shrink: 0;
     }
 
-    /* Browser preview GNews */
+    /* Browser preview inline */
     .stage2-iframe-wrap {
       border-radius: 10px;
       overflow: hidden;
@@ -96,25 +157,24 @@
       display: block;
       transition: transform .45s ease;
     }
-    .stage2-preview:hover img {
-      transform: scale(1.02);
-    }
+    .stage2-preview:hover img { transform: scale(1.02); }
 
-    /* Carrés colorés dans feature-list */
+    /* Carrés colorés */
     .proj-feature-sq {
       display: inline-block;
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 2px;
       background: var(--sq-color, #1a1a1a);
       flex-shrink: 0;
       align-self: center;
-      margin-top: 0;
     }
 
     @media (max-width: 768px) {
       .proj-content-grid-ctx { grid-template-columns: 1fr !important; }
       .proj-pages-grid { grid-template-columns: repeat(2, 1fr); }
+      .proj-arch-list-row { grid-template-columns: 1fr; }
+      .stage-section { padding-top: 48px; }
+      .stage-section-sub { margin-bottom: 32px; }
     }
   </style>
 </head>
@@ -142,7 +202,15 @@
       </div>
       <div class="proj-hero-meta-item">
         <span class="proj-hero-meta-label">Stack</span>
-        <span class="proj-hero-meta-value">Figma · HTML · JSON · GitLab</span>
+        <span class="proj-hero-meta-value">Figma · Tailwind · Laravel · GitLab</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Projets</span>
+        <span class="proj-hero-meta-value">GNews · Locarail</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Méthode</span>
+        <span class="proj-hero-meta-value">Agile Scrum</span>
       </div>
       <div class="proj-hero-meta-item">
         <span class="proj-hero-meta-label">Durée</span>
@@ -152,6 +220,7 @@
         <span class="proj-hero-meta-label">Liens</span>
         <span class="proj-hero-meta-value" style="display:flex;gap:16px">
           <a class="proj-hero-link" href="https://gnews.io" target="_blank" rel="noopener">gnews.io ↗</a>
+          <a class="proj-hero-link" href="https://www.locarail.ch/" target="_blank" rel="noopener">locarail.ch ↗</a>
           <a class="proj-hero-link" href="https://gigathink.ch/" target="_blank" rel="noopener">Gigathink ↗</a>
         </span>
       </div>
@@ -159,7 +228,73 @@
   </div>
 </section>
 
-<!-- ─── CAROUSEL ──────────────────────────── -->
+<!-- ─── CONTEXTE ──────────────────────────── -->
+<div class="proj-content proj-content-ctx">
+  <div class="proj-content-inner">
+
+    <div class="proj-content-grid-2 proj-content-grid-ctx">
+      <div class="proj-block proj-block-fill">
+        <span class="proj-block-title">Le stage</span>
+        <p class="proj-about-text">
+          Durant ce stage chez <strong>Gigathink</strong>, j'ai travaillé sur <strong>2 projets majeurs</strong>.
+        </p>
+        <div class="proj-arch-list-cards">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">GNews</span>
+            <div>
+              <div class="proj-arch-item-title">Refonte GNews.io</div>
+              <div class="proj-arch-item-desc">SEO, refonte des pages, internationalisation JSON et analyse concurrentielle.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Locarail</span>
+            <div>
+              <div class="proj-arch-item-title">Vue Locarail</div>
+              <div class="proj-arch-item-desc">Développement de la vue du site avec Laravel et Tailwind CSS.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block proj-block-fill">
+        <span class="proj-block-title">Méthode Agile — Scrum</span>
+        <p class="proj-about-text">Stand-up quotidien chaque matin pour synchroniser l'équipe, partager l'avancement et débloquer les points en suspens.</p>
+        <div class="proj-arch-list-row">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">Daily</span>
+            <div>
+              <div class="proj-arch-item-title">Stand-up quotidien</div>
+              <div class="proj-arch-item-desc">Réunion courte chaque matin pour planifier la journée.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">Suivi</span>
+            <div>
+              <div class="proj-arch-item-title">Suivi des tâches</div>
+              <div class="proj-arch-item-desc">Chaque membre partage son avancement et ses priorités.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">Blocages</span>
+            <div>
+              <div class="proj-arch-item-title">Résolution de blocages</div>
+              <div class="proj-arch-item-desc">Remontée des problèmes pour débloquer rapidement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ GNews ══ -->
+    <div class="stage-section">
+      <h2 class="stage-section-title"><em>GNews</em></h2>
+      <span class="stage-section-sub">Refonte SEO & Intégration — gnews.io</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CAROUSEL GNEWS ────────────────────── -->
 <div class="proj-carousel">
   <div class="proj-carousel-browser" id="c1">
     <div class="proj-carousel-bar">
@@ -185,36 +320,24 @@
       </div>
     </div>
   </div>
-
   <div class="proj-carousel-progress-wrap">
-    <div class="proj-carousel-dots">
-      <button class="proj-carousel-dot active"><div class="proj-carousel-dot-fill"></div></button>
-      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
-      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
-      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
-      <button class="proj-carousel-dot"><div class="proj-carousel-dot-fill"></div></button>
-    </div>
-    <span class="proj-carousel-counter">01 / 05</span>
+    <div class="proj-carousel-dots" id="c1-dots"></div>
+    <span class="proj-carousel-counter" id="c1-counter">01 / 05</span>
   </div>
 </div>
 
-<!-- ─── CONTENU ───────────────────────────── -->
-<div class="proj-content proj-content-ctx">
+<!-- ─── CONTENU GNEWS ─────────────────────── -->
+<div class="proj-content">
   <div class="proj-content-inner">
 
-    <!-- L'entreprise + Stack -->
-    <div class="proj-content-grid-2 proj-content-grid-ctx">
-      <div class="proj-block proj-block-fill">
-        <span class="proj-block-title">L'entreprise</span>
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
         <p class="proj-about-text">
-          <strong>Gigathink SNC</strong> est une société suisse basée à Vernier, spécialisée dans le développement web et les applications mobiles. Elle édite notamment <strong>GNews</strong>, une API performante permettant de collecter et diffuser des actualités en temps réel.
-        </p>
-        <p class="proj-about-text" style="margin-top:16px">
-          L'entreprise accompagne ses clients de la conception à l'optimisation de leurs solutions numériques, dans un environnement technologique en constante évolution.
+          <strong>GNews</strong> est un produit interne de Gigathink : une API performante permettant de collecter et diffuser des actualités en temps réel. Ma mission était de participer à la <strong>refonte complète du site marketing</strong>, de l'optimisation SEO à la modernisation de l'UX.
         </p>
       </div>
-
-      <div class="proj-block proj-block-fill">
+      <div class="proj-block">
         <span class="proj-block-title">Stack technique</span>
         <div class="proj-stack-list">
           <div class="proj-stack-item">
@@ -241,7 +364,6 @@
       </div>
     </div>
 
-    <!-- Refonte + Pages retravaillées -->
     <div class="proj-content-grid-2-equal">
       <div class="proj-block">
         <span class="proj-block-title">Refonte du site</span>
@@ -264,7 +386,6 @@
           </div>
         </div>
       </div>
-
       <div class="proj-block">
         <span class="proj-block-title">Pages retravaillées</span>
         <div class="proj-pages-grid">
@@ -278,13 +399,11 @@
       </div>
     </div>
 
-    <!-- Internationalisation -->
     <div class="proj-content-grid-2-equal">
       <div class="proj-block">
         <span class="proj-block-title">Internationalisation</span>
         <p class="proj-about-text">
-          J'ai structuré l'ensemble des contenus textuels pour faciliter le multilinguisme.
-          Chaque expression clé a été extraite et stockée dans des <strong>fichiers JSON</strong>.
+          J'ai structuré l'ensemble des contenus textuels pour faciliter le multilinguisme. Chaque expression clé a été extraite et stockée dans des <strong>fichiers JSON</strong>.
         </p>
         <p class="proj-about-text" style="margin-top:16px">
           Cela permet une gestion centralisée des traductions (Anglais, Espagnol) et des mises à jour rapides sans toucher au code structurel.
@@ -295,7 +414,6 @@
       </div>
     </div>
 
-    <!-- Analyse concurrentielle -->
     <div class="proj-content-grid-2-equal">
       <div class="proj-img-block">
         <img src="../img/projets/stages/stages1/concurents.png" alt="Tableau comparatif">
@@ -327,14 +445,179 @@
       </div>
     </div>
 
+    <!-- ══ Locarail ══ -->
+    <div class="stage-section">
+      <h2 class="stage-section-title"><em>Locarail</em></h2>
+      <span class="stage-section-sub">Intégration Laravel · Tailwind CSS · locarail.ch</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CAROUSEL LOCARAIL ─────────────────── -->
+<div class="proj-carousel">
+  <div class="proj-carousel-browser" id="c2">
+    <div class="proj-carousel-bar">
+      <div class="proj-carousel-dots-bar">
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+        <div class="proj-carousel-dot-bar"></div>
+      </div>
+      <div class="proj-carousel-url">
+        <div class="proj-carousel-url-dot"></div>
+        <span class="proj-carousel-url-text">locarail.ch</span>
+      </div>
+    </div>
+    <div class="proj-carousel-viewport">
+      <button class="proj-carousel-tap proj-carousel-tap-l" aria-label="Précédent"></button>
+      <button class="proj-carousel-tap proj-carousel-tap-r" aria-label="Suivant"></button>
+      <div class="proj-carousel-track">
+        <div class="proj-carousel-slide active"><img src="../img/projets/stages/stages1/locarailhome.png" alt="Locarail — Accueil"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/locarail.png" alt="Locarail — Vue principale"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/locarail2.png" alt="Locarail — Vue 2"></div>
+        <div class="proj-carousel-slide"><img src="../img/projets/stages/stages1/locarail3.png" alt="Locarail — Vue 3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="proj-carousel-progress-wrap">
+    <div class="proj-carousel-dots" id="c2-dots"></div>
+    <span class="proj-carousel-counter" id="c2-counter">01 / 04</span>
+  </div>
+</div>
+
+<!-- ─── CONTENU LOCARAIL ──────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>LocaRail</strong> est une société suisse spécialisée dans les <strong>services ferroviaires professionnels</strong> : accompagnement sécurisé de trains, conducteurs certifiés (A40, A, B100), chefs de sécurité qualifiés et formations certifiées pour les professionnels du rail.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          Ma mission chez Gigathink consistait à développer la vue du site <strong>locarail.ch</strong> à l'aide de <strong>Laravel</strong> et <strong>Tailwind CSS</strong>, en intégrant fidèlement les maquettes de l'équipe design pour présenter les services et l'expertise de l'entreprise.
+        </p>
+      </div>
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel">
+            Laravel — PHP
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
+            Tailwind CSS
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            Figma — Maquettes
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab">
+            GitLab — Versioning
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Missions réalisées</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#10b981"></span>
+            Intégration des composants UI depuis les maquettes Figma.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#6366f1"></span>
+            Mise en place d'une structure responsive avec Tailwind CSS.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#f59e0b"></span>
+            Présentation des services : conducteurs, chefs de sécurité, formations.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-sq" style="--sq-color:#f43f5e"></span>
+            Livraison via GitLab et revue de code avec l'équipe.
+          </div>
+        </div>
+      </div>
+      <div class="proj-block">
+        <span class="proj-block-title">Services mis en avant</span>
+        <div class="proj-pages-grid">
+          <span class="proj-page-tag" style="--page-color:#10b981">Conducteurs</span>
+          <span class="proj-page-tag" style="--page-color:#6366f1">Sécurité</span>
+          <span class="proj-page-tag" style="--page-color:#f59e0b">Formations</span>
+          <span class="proj-page-tag" style="--page-color:#f43f5e">Expertise</span>
+          <span class="proj-page-tag" style="--page-color:#8b5cf6">Rail-Route</span>
+          <span class="proj-page-tag" style="--page-color:#14b8a6">Contact</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <!-- ─── CTA ───────────────────────────────── -->
 <section class="proj-cta">
-  <a href="https://gnews.io" target="_blank" rel="noopener" class="btn"><span>Voir le site GNews ↗</span></a>
+  <a href="https://gnews.io" target="_blank" rel="noopener" class="btn" style="margin-right:16px"><span>Voir GNews ↗</span></a>
+  <a href="https://www.locarail.ch/" target="_blank" rel="noopener" class="btn"><span>Voir Locarail ↗</span></a>
 </section>
 
-<script src="project.js"></script>
+<script>
+(function () {
+  // Initialise un carrousel par browser ID
+  function initCarousel(browserId, dotsId, counterId) {
+    const browser  = document.getElementById(browserId);
+    if (!browser) return;
+    const slides   = Array.from(browser.querySelectorAll('.proj-carousel-slide'));
+    const dotsWrap = document.getElementById(dotsId);
+    const counter  = document.getElementById(counterId);
+    const tapL     = browser.querySelector('.proj-carousel-tap-l');
+    const tapR     = browser.querySelector('.proj-carousel-tap-r');
+    if (!slides.length) return;
+
+    let cur = 0;
+    const total = slides.length;
+
+    slides.forEach((_, i) => {
+      const dot  = document.createElement('button');
+      dot.className = 'proj-carousel-dot' + (i === 0 ? ' active' : '');
+      const fill = document.createElement('span');
+      fill.className = 'proj-carousel-dot-fill';
+      dot.appendChild(fill);
+      dot.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function go(i) {
+      slides[cur].classList.remove('active');
+      dotsWrap.children[cur].classList.remove('active');
+      cur = (i + total) % total;
+      slides[cur].classList.add('active');
+      dotsWrap.children[cur].classList.add('active');
+      counter.textContent = String(cur + 1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+    }
+
+    if (tapL) tapL.addEventListener('click', () => go(cur - 1));
+    if (tapR) tapR.addEventListener('click', () => go(cur + 1));
+
+    const vp = browser.querySelector('.proj-carousel-viewport');
+    let sx = 0;
+    vp.addEventListener('pointerdown', e => { sx = e.clientX; });
+    vp.addEventListener('pointerup',   e => {
+      const d = e.clientX - sx;
+      if (Math.abs(d) > 40) go(cur + (d < 0 ? 1 : -1));
+    });
+
+    go(0);
+  }
+
+  initCarousel('c1', 'c1-dots', 'c1-counter');
+  initCarousel('c2', 'c2-dots', 'c2-counter');
+})();
+</script>
 </body>
 </html>
