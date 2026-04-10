@@ -379,9 +379,21 @@
 .proj-hero-link {
   text-decoration: none;
   color: var(--black);
-  transition: opacity .25s;
+  border: 1.5px solid var(--black);
+  padding: 7px 16px;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: linear-gradient(to top, var(--black) 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: background-position .35s cubic-bezier(.4,0,.2,1), color .35s;
 }
-.proj-hero-link:hover { opacity: 1; }
+.proj-hero-link:hover {
+  background-position: bottom;
+  color: var(--white);
+}
 
 /* ─── Phone mockups ──────────────────────── */
 .proj-phones {

@@ -7,6 +7,23 @@
   --black-soft:  #333333;
   --white:       #f5f5f0;
   --white-pure:  #ffffff;
+
+  /* ── Échelle d'espacements ── */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ── Échelle typographique ── */
+  --font-xs:  .65rem;
+  --font-sm:  .72rem;
+  --font-md:  .88rem;
+  --font-lg:  1.25rem;
+  --font-xl:  2.2rem;
+  --font-2xl: clamp(2.8rem, 5vw, 5.5rem);
 }
 
 html { scroll-behavior: smooth; }
@@ -17,6 +34,23 @@ body {
   color: var(--black);
   overflow-x: hidden;
 }
+
+/* ─── Skip link (accessibilité clavier) ─── */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 0;
+  background: var(--black);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top .2s;
+}
+.skip-link:focus { top: 0; }
 
 /* ─── Scroll Reveal ──────────────────────── */
 .r {
@@ -72,6 +106,25 @@ body {
 .btn-ghost::after { background: var(--white); }
 .btn-ghost:hover { color: var(--black); }
 
+/* ─── Focus visible (accessibilité clavier) ─ */
+.btn:focus-visible,
+.nav-cta:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
+}
+#nav.dark-nav .btn:focus-visible,
+#nav.dark-nav .nav-cta:focus-visible {
+  outline-color: var(--white);
+}
+.btn-outline-dark:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
+}
+.proj-link:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
+}
+
 /* ─── Navigation ─────────────────────────── */
 #nav {
   position: fixed;
@@ -123,10 +176,17 @@ body {
   color: var(--black);
   text-decoration: none;
   opacity: .55;
-  transition: opacity .3s, color .3s;
+  transition: opacity .3s, color .3s, background-size .3s ease;
+  background: linear-gradient(to right, var(--black) 0%, var(--black) 0%) 0 100% / 0 1.5px no-repeat;
 }
-.nav-links a:hover { opacity: 1; }
-#nav.dark-nav .nav-links a { color: var(--white); }
+.nav-links a:hover {
+  opacity: 1;
+  background-size: 100% 1.5px;
+}
+#nav.dark-nav .nav-links a {
+  color: var(--white);
+  background-image: linear-gradient(to right, var(--white) 0%, var(--white) 0%);
+}
 
 .nav-cta {
   font-size: .75rem;
@@ -392,7 +452,7 @@ body {
   font-weight: 500;
   letter-spacing: .22em;
   text-transform: uppercase;
-  opacity: .4;
+  opacity: .5;
   margin-bottom: 20px;
   display: block;
 }
@@ -525,7 +585,7 @@ body {
   letter-spacing: .04em;
   color: var(--white);
   border: 1px solid rgba(245,245,240,.18);
-  padding: 5px 12px;
+  padding: 8px 14px;
   border-radius: 100px;
   opacity: .7;
   transition: opacity .25s, border-color .25s;
@@ -550,7 +610,7 @@ body {
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--white);
-  opacity: .35;
+  opacity: .5;
   margin-bottom: 24px;
   display: block;
 }
@@ -765,7 +825,7 @@ body {
   letter-spacing: .1em;
   text-transform: uppercase;
   border: 1px solid rgba(26,26,26,.18);
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 100px;
   color: var(--black);
   opacity: .5;
@@ -788,11 +848,19 @@ body {
   text-transform: uppercase;
   color: var(--black);
   text-decoration: none;
-  border-bottom: 1px solid rgba(26,26,26,.3);
-  padding-bottom: 2px;
-  transition: opacity .25s;
+  border: 1.5px solid var(--black);
+  padding: 8px 18px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to top, var(--black) 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: background-position .35s cubic-bezier(.4,0,.2,1), color .35s;
 }
-.proj-link:hover { opacity: .5; }
+.proj-link:hover {
+  background-position: bottom;
+  color: var(--white);
+}
 
 /* ─── Modal projet ───────────────────────── */
 #proj-modal {
@@ -1264,28 +1332,38 @@ footer {
   .svc-card      { padding: 36px 28px; }
   .svc-card[style*="span 2"] { grid-column: span 1 !important; }
 
-  /* — Certifications mobile : grille statique, sans hover — */
+  /* — Certifications mobile : grille 2×3 statique — */
   .cert-section { padding-top: 48px; }
   .cert-body    { align-items: flex-start; }
   .cert-stack   {
     position: static;
-    width: auto;
+    width: 100%;
     height: auto;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     cursor: default;
     margin-bottom: 16px;
   }
   .cert-badge,
-  .cert-stack:hover .cert-badge {
+  .cert-stack:hover .cert-badge,
+  .cert-badge:nth-child(1), .cert-badge:nth-child(2), .cert-badge:nth-child(3),
+  .cert-badge:nth-child(4), .cert-badge:nth-child(5), .cert-badge:nth-child(6),
+  .cert-stack:hover .cert-badge:nth-child(1),
+  .cert-stack:hover .cert-badge:nth-child(2),
+  .cert-stack:hover .cert-badge:nth-child(3),
+  .cert-stack:hover .cert-badge:nth-child(4),
+  .cert-stack:hover .cert-badge:nth-child(5),
+  .cert-stack:hover .cert-badge:nth-child(6) {
     position: static;
-    width: 76px;
-    height: 76px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 14px;
-    transform: none;
+    transform: none !important;
     transition: none;
     box-shadow: 0 4px 16px rgba(0,0,0,.45);
+    z-index: auto;
   }
   .cert-stack:hover::before { display: none; }
   .cert-hint { display: none; }
@@ -1294,7 +1372,7 @@ footer {
   .process       { padding: 72px 24px; }
   .process-grid  { grid-template-columns: 1fr; }
   .proc-card     { padding: 40px 28px; }
-  .process-arrow { padding: 28px 0 0; }
+  .process-arrow { display: none !important; }
 
   /* — Projets — */
   .projects      { padding: 72px 24px; }
@@ -1302,7 +1380,7 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
   .proj-card     { cursor: pointer; }
   #proj-cursor   { display: none; }
-  #proj-modal-panel { padding: 60px 24px; }
+  #proj-modal-panel { padding: 40px 20px; }
   #proj-modal-close { top: 20px; right: 20px; }
 
   /* — Contact — */
@@ -1322,7 +1400,16 @@ footer {
 @media (max-width: 390px) {
   .footer-top    { grid-template-columns: 1fr; }
   .footer-brand  { height: clamp(2rem, 12vw, 4rem); }
-  .cert-badge,
-  .cert-stack:hover .cert-badge { width: 68px; height: 68px; }
   .contact-inner { gap: 32px; }
 }
+
+/* ─── Accessibilité mouvement réduit ─────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

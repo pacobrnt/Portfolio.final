@@ -16,6 +16,9 @@
   <meta property="og:title" content="Paco Hybord — Portfolio BTS SIO SLAM" />
   <meta property="og:description" content="Portfolio de Paco Hybord, étudiant en BTS SIO SLAM à Annecy. Découvrez ses projets web, ses compétences et son parcours pour l'épreuve E5." />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- ─── Données structurées JSON-LD ──────────── -->
   <script type="application/ld+json">
@@ -50,6 +53,9 @@
 </head>
 <body>
 
+<!-- ─── SKIP LINK ───────────────────────────── -->
+<a href="#a-propos" class="skip-link">Sauter au contenu principal</a>
+
 <!-- ─── NAV ─────────────────────────────────── -->
 <nav id="nav">
   <a href="#" class="nav-logo">Paco.</a>
@@ -80,8 +86,9 @@
 <!-- ─── HERO ──────────────────────────────────  -->
 <section class="hero">
   <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <noscript>Zone interactive avec animation CSS disponible</noscript>
 
-  <h1 class="r d1">Je développe des<br>solutions<br><span class="hero-word-clip"><em class="hero-word">web</em></span>.</h1>
+  <h1 class="r d1">Je conçois &amp;<br>développe le<br><span class="hero-word-clip"><em class="hero-word">web</em></span>.</h1>
 
   <p class="hero-sub r d2">Paco Hybord — BTS SIO SLAM · Annecy.</p>
 
@@ -135,11 +142,11 @@
         Développeur full-stack et designer UI/UX, je transforme des idées complexes en produits digitaux clairs et impactants. J'accorde autant d'importance à la qualité du code qu'à la beauté de l'interface — parce que les deux sont inséparables.
       </p>
       <div class="about-actions r d3">
-        <a href="#" class="btn" download>
-          <span>Télécharger mon CV</span>
+        <a href="piecejointe/paco hybord (4).pdf" class="btn" target="_blank" rel="noopener">
+          <span>Voir mon CV</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 1 L7 10 M3 7 L7 11 L11 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M1 13 L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M7 3 C3 3 1 7 1 7 C1 7 3 11 7 11 C11 11 13 7 13 7 C13 7 11 3 7 3 Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/>
           </svg>
         </a>
         <a href="#" class="btn-outline-dark">
@@ -245,6 +252,7 @@
         <span class="svc-pill">Twig</span>
         <span class="svc-pill">Bootstrap</span>
         <span class="svc-pill">Symfony</span>
+        <span class="svc-pill">WordPress</span>
       </div>
     </div>
 
@@ -275,6 +283,11 @@
       <div class="svc-pills">
         <span class="svc-pill">Cisco</span>
         <span class="svc-pill">Kali Linux</span>
+        <span class="svc-pill">OWASP</span>
+        <span class="svc-pill">ANSSI</span>
+        <span class="svc-pill">RGPD</span>
+        <span class="svc-pill">Chiffrement</span>
+        <span class="svc-pill">Cybermenaces</span>
       </div>
     </div>
 
@@ -320,6 +333,7 @@
       <div class="svc-pills">
         <span class="svc-pill">AWS</span>
         <span class="svc-pill">Infomaniak</span>
+        <span class="svc-pill">Docker</span>
       </div>
     </div>
 
@@ -339,6 +353,8 @@
         <span class="svc-pill">UML (Merise / Agile)</span>
         <span class="svc-pill">Linux</span>
         <span class="svc-pill">VirtualBox</span>
+        <span class="svc-pill">VMware</span>
+        <span class="svc-pill">PowerShell</span>
         <span class="svc-pill">M365 / Office</span>
       </div>
     </div>
@@ -380,7 +396,7 @@
       data-tags="HTML · CSS · Tailwind"
       data-category="Personnel"
       data-desc="CleanCars est un site vitrine de vente de voitures d'occasion conçu avec une interface moderne et épurée. Le projet met en avant une navigation fluide, des fiches véhicules claires et un design responsive réalisé avec Tailwind CSS."
-      data-icon="🚗"
+
 
       data-link="projects/cleancars.html">
       <div class="proj-thumb">
@@ -410,7 +426,7 @@
       data-tags="Symfony · API Gnews · Bootstrap"
       data-category="Personnel"
       data-desc="Application web d'agrégation d'actualités en temps réel. Les articles sont récupérés dynamiquement via l'API GNews et affichés par catégorie. Le projet utilise Symfony pour le back-end et Bootstrap pour une interface responsive et lisible."
-      data-icon="📰"
+
 
       data-link="projects/actualites.html">
       <div class="proj-thumb">
@@ -439,7 +455,7 @@
       data-tags="Symfony · PWA · Firebase"
       data-category="Personnel"
       data-desc="Application de score pour matchs de tennis développée en Progressive Web App. L'utilisateur peut suivre ses parties en temps réel, consulter l'historique de ses matchs et utiliser l'app hors-ligne. Firebase assure la synchronisation des données en temps réel."
-      data-icon="🎾"
+
 
       data-link="projects/deuce.html">
       <div class="proj-thumb">
@@ -483,7 +499,7 @@
       data-tags="API REST · XML · Java"
       data-category="Scolaire"
       data-desc="Application de gestion des frais professionnels pour le laboratoire Galaxy Swiss Bourdin. Développée en Java avec des échanges de données en XML via une API REST, elle permet aux visiteurs médicaux de soumettre et suivre leurs notes de frais."
-      data-icon="🏥"
+
       data-link="projects/scolaire-1.html">
       <div class="proj-thumb">
         <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -517,7 +533,7 @@
       data-tags="CSS · Symfony · Twig"
       data-category="Scolaire"
       data-desc="Application web de digitalisation du processus de convention de stage. Développée avec Symfony et Twig, elle permet la création, le suivi et la validation numérique des conventions, remplaçant les flux papier par un workflow entièrement en ligne."
-      data-icon="📄"
+
       data-link="projects/scolaire-2.html">
       <div class="proj-thumb">
         <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -558,7 +574,7 @@
       data-tags="HTML · Kali Linux"
       data-category="Scolaire"
       data-desc="Forum de sensibilisation à la cybersécurité réalisé dans le cadre du BTS SIO. Le projet présente les principales menaces informatiques, les bonnes pratiques de défense et des démonstrations réalisées avec Kali Linux."
-      data-icon="🔒"
+
 
       data-link="projects/scolaire-3.html">
       <div class="proj-thumb">
@@ -600,7 +616,7 @@
       data-tags="Vue 3 · Laravel · Figma"
       data-category="Professionnel"
       data-desc="Stage de développement full-stack chez Gigathink (janvier–mars 2026). Participation à la conception et au développement d'interfaces avec Vue 3, back-end Laravel, et maquettage sous Figma."
-      data-icon="💼"
+
 
       data-link="projects/stage-1.html">
       <div class="proj-thumb">
@@ -645,7 +661,7 @@
       data-tags="JSON · Tailwind CSS · Git"
       data-category="Professionnel"
       data-desc="Stage de développement chez Gigathink (juin 2025). Travail sur des flux de données JSON, intégration front-end avec Tailwind CSS et gestion de versions via Git."
-      data-icon="💼"
+
 
       data-link="projects/stage-2.html">
       <div class="proj-thumb">
@@ -699,17 +715,17 @@
       <div class="form-row">
         <div class="form-group">
           <label for="name">Nom</label>
-          <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+          <input type="text" id="name" name="name" placeholder="Jean Dupont" autocomplete="name" required />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="jean@exemple.com" required />
+          <input type="email" id="email" name="email" placeholder="jean@exemple.com" autocomplete="email" required />
         </div>
       </div>
 
       <div class="form-group">
         <label for="subject">Sujet</label>
-        <input type="text" id="subject" name="subject" placeholder="De quoi s'agit-il ?" />
+        <input type="text" id="subject" name="subject" placeholder="De quoi s'agit-il ?" autocomplete="off" />
       </div>
 
       <div class="form-group">
@@ -774,7 +790,6 @@
     </div>
 
     <div class="footer-brand">HYBORD</div>
-    <p class="footer-copy">© 2025 Paco Hybord — Portfolio BTS SIO SLAM · Épreuve E5 · Annecy</p>
   </div>
 </footer>
 
