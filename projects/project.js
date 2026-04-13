@@ -9,10 +9,8 @@
 
   if (!viewport || slides.length === 0) return;
 
-  let current  = 0;
-  let timer    = null;
-  const total  = slides.length;
-  const DELAY  = 4500;
+  let current = 0;
+  const total = slides.length;
 
   function goTo(index) {
     slides[current].classList.remove('active');
@@ -23,45 +21,28 @@
     if (counter) counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
   }
 
-  function startTimer() {
-    timer = setInterval(() => goTo(current + 1), DELAY);
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    startTimer();
-  }
-
-  if (btnPrev) btnPrev.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
-  if (btnNext) btnNext.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+  if (btnPrev) btnPrev.addEventListener('click', () => goTo(current - 1));
+  if (btnNext) btnNext.addEventListener('click', () => goTo(current + 1));
 
   const tapL = viewport.querySelector('.proj-carousel-tap-l');
   const tapR = viewport.querySelector('.proj-carousel-tap-r');
-  if (tapL) tapL.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
-  if (tapR) tapR.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
-  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetTimer(); }));
-
-  /* Pause au hover */
-  const carousel = document.querySelector('.proj-carousel');
-  if (carousel) {
-    carousel.addEventListener('mouseenter', () => clearInterval(timer));
-    carousel.addEventListener('mouseleave', startTimer);
-  }
+  if (tapL) tapL.addEventListener('click', () => goTo(current - 1));
+  if (tapR) tapR.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
 
   /* Swipe tactile */
   let startX = 0;
   viewport.addEventListener('pointerdown', e => { startX = e.clientX; });
   viewport.addEventListener('pointerup',   e => {
     const delta = e.clientX - startX;
-    if (Math.abs(delta) > 40) { goTo(current + (delta < 0 ? 1 : -1)); resetTimer(); }
+    if (Math.abs(delta) > 40) goTo(current + (delta < 0 ? 1 : -1));
   });
 
   /* Touches clavier */
   document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft')  { goTo(current - 1); resetTimer(); }
-    if (e.key === 'ArrowRight') { goTo(current + 1); resetTimer(); }
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
   });
 
   goTo(0);
-  startTimer();
 })();
