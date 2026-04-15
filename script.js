@@ -109,7 +109,7 @@ setTimeout(() => {
 
 /* ── Hero word rotation ─────────────────── */
 (function () {
-  const words = ['web', 'métier', 'sur mesure'];
+  const words = ['web', 'sécurisées', 'modernes'];
   let idx = 0;
   const el = document.querySelector('.hero-word');
   if (!el) return;
