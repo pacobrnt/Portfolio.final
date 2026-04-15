@@ -1335,37 +1335,31 @@ footer {
   /* — Certifications mobile : grille 2×3 statique — */
   .cert-section { padding-top: 48px; }
   .cert-body    { align-items: flex-start; }
-  .cert-stack   {
-    position: static;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    cursor: default;
-    margin-bottom: 16px;
+  .cert-stack {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    cursor: default !important;
+    margin-bottom: 16px !important;
+    pointer-events: none !important;
   }
-  .cert-badge,
-  .cert-stack:hover .cert-badge,
-  .cert-badge:nth-child(1), .cert-badge:nth-child(2), .cert-badge:nth-child(3),
-  .cert-badge:nth-child(4), .cert-badge:nth-child(5), .cert-badge:nth-child(6),
-  .cert-stack:hover .cert-badge:nth-child(1),
-  .cert-stack:hover .cert-badge:nth-child(2),
-  .cert-stack:hover .cert-badge:nth-child(3),
-  .cert-stack:hover .cert-badge:nth-child(4),
-  .cert-stack:hover .cert-badge:nth-child(5),
-  .cert-stack:hover .cert-badge:nth-child(6) {
-    position: static;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 14px;
+  .cert-stack::before { display: none !important; }
+  .cert-stack .cert-badge {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 !important;
+    border-radius: 14px !important;
     transform: none !important;
-    transition: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,.45);
-    z-index: auto;
+    transition: none !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,.45) !important;
+    z-index: auto !important;
   }
-  .cert-stack:hover::before { display: none; }
   .cert-hint { display: none; }
 
   /* — Parcours — */
