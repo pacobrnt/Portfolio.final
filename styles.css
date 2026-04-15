@@ -1392,7 +1392,7 @@ footer {
 
 /* ── Très petit mobile (≤ 390px) ────────── */
 @media (max-width: 390px) {
-  .footer-top    { grid-template-columns: 1fr; }
+  .footer-top    { grid-template-columns: 1fr 1fr; }
   .footer-brand  { height: clamp(2rem, 12vw, 4rem); }
   .contact-inner { gap: 32px; }
 }
