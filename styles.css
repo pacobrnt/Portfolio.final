@@ -1341,13 +1341,21 @@ footer {
     height: auto !important;
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
     gap: 12px !important;
     cursor: default !important;
     margin-bottom: 16px !important;
     pointer-events: none !important;
   }
   .cert-stack::before { display: none !important; }
-  .cert-stack .cert-badge {
+  .cert-stack .cert-badge,
+  .cert-stack:hover .cert-badge,
+  .cert-stack:hover .cert-badge:nth-child(1),
+  .cert-stack:hover .cert-badge:nth-child(2),
+  .cert-stack:hover .cert-badge:nth-child(3),
+  .cert-stack:hover .cert-badge:nth-child(4),
+  .cert-stack:hover .cert-badge:nth-child(5),
+  .cert-stack:hover .cert-badge:nth-child(6) {
     position: static !important;
     top: auto !important;
     left: auto !important;
