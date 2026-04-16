@@ -214,20 +214,36 @@
             <circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/>
           </svg>
         </a>
-        <a href="#" class="btn-outline-dark">
-          <span>Veille informationnelle</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M7 4 L7 7.5 L9.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a href="#competences" class="btn-outline-dark">
-          <span>Tableau de compétences</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <path d="M1 5 L13 5 M1 9 L13 9 M5 1 L5 13" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-        </a>
+        <div class="wip-wrap">
+          <a href="#" class="btn-outline-dark" tabindex="-1" aria-disabled="true">
+            <span>Veille informationnelle</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M7 4 L7 7.5 L9.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="wip-label">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+              <path d="M2 1h10M2 13h10M4 1C4 4 7 6.5 7 7C7 6.5 10 4 10 1M4 13C4 10 7 7.5 7 7C7 7.5 10 10 10 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>En cours de saisie</span>
+          </div>
+        </div>
+        <div class="wip-wrap">
+          <a href="#competences" class="btn-outline-dark" tabindex="-1" aria-disabled="true">
+            <span>Tableau de compétences</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M1 5 L13 5 M1 9 L13 9 M5 1 L5 13" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </a>
+          <div class="wip-label">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+              <path d="M2 1h10M2 13h10M4 1C4 4 7 6.5 7 7C7 6.5 10 4 10 1M4 13C4 10 7 7.5 7 7C7 7.5 10 10 10 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>En cours de saisie</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -559,13 +575,19 @@
     <div class="proj-row-label r"><span>Scolaire</span></div>
 
     <!-- GSB -->
-    <div class="proj-card r"
+    <div class="proj-card r wip-card"
       data-title="GSB"
       data-tags="API REST · XML · Java"
       data-category="Scolaire"
       data-desc="Application de gestion des frais professionnels pour le laboratoire Galaxy Swiss Bourdin. Développée en Java avec des échanges de données en XML via une API REST, elle permet aux visiteurs médicaux de soumettre et suivre leurs notes de frais."
 
       data-link="projects/scolaire-1.html">
+      <div class="wip-overlay">
+        <svg width="28" height="28" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 1h10M2 13h10M4 1C4 4 7 6.5 7 7C7 6.5 10 4 10 1M4 13C4 10 7 7.5 7 7C7 7.5 10 10 10 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="wip-overlay-text">En cours de saisie</span>
+      </div>
       <div class="proj-thumb">
         <svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="500" height="400" fill="#d0d4d0"/>

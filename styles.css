@@ -778,6 +778,67 @@ body {
   letter-spacing: .04em;
 }
 
+/* ─── WIP (En cours de saisie) ──────────── */
+.wip-card {
+  position: relative;
+  pointer-events: none;
+  cursor: default !important;
+}
+.wip-card > *:not(.wip-overlay) {
+  filter: blur(4px);
+  opacity: 0.35;
+  user-select: none;
+}
+.wip-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.wip-overlay svg { opacity: 0.55; color: var(--black); }
+.wip-overlay-text {
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.wip-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.wip-wrap > a {
+  filter: blur(3px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.wip-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.wip-label svg { opacity: 0.55; color: var(--black); flex-shrink: 0; }
+.wip-label span {
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
 /* ─── PROJECTS ───────────────────────────── */
 .projects {
   background: var(--white);
