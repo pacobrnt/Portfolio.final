@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projet GSB — Gestion frais Java, API REST, XML | Paco Hybord</title>
-  <meta name="description" content="Projet GSB de Paco Hybord — Application de gestion des frais professionnels pour Galaxy Swiss Bourdin. Java, API REST, XML. Projet BTS SIO SLAM Annecy." />
-  <meta name="keywords" content="Paco Hybord, projet GSB, Java, API REST, XML, gestion frais, BTS SIO SLAM" />
+  <title>GSB — API REST Node.js, App Android Java | Paco Hybord</title>
+  <meta name="description" content="Projet GSB de Paco Hybord — API REST Node.js/TypeScript et application Android Java pour la gestion des visites médicales. BTS SIO SLAM Annecy." />
+  <meta name="keywords" content="Paco Hybord, projet GSB, Java, Android, Node.js, TypeScript, MongoDB, API REST, JWT, Postman, BTS SIO SLAM" />
   <meta name="author" content="Paco Hybord" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://pacohybord.sbs/projects/scolaire-1.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Projet GSB — Java, API REST, XML | Paco Hybord" />
-  <meta property="og:description" content="Application de gestion des frais Galaxy Swiss Bourdin — Java, API REST, XML. Paco Hybord, BTS SIO SLAM Annecy." />
+  <meta property="og:title" content="GSB — API REST Node.js &amp; App Android | Paco Hybord" />
+  <meta property="og:description" content="API REST sécurisée Node.js/TypeScript et app Android Java pour GSB. Paco Hybord, BTS SIO SLAM Annecy." />
   <meta property="og:url" content="https://pacohybord.sbs/projects/scolaire-1.html" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Paco Hybord — Portfolio" />
@@ -19,16 +19,16 @@
   {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": "GSB — Application gestion des frais professionnels",
+    "name": "GSB — Gestion des visites médicales",
     "author": { "@type": "Person", "name": "Paco Hybord", "url": "https://pacohybord.sbs/" },
-    "description": "Application de gestion des frais professionnels pour Galaxy Swiss Bourdin. Java, API REST, XML.",
+    "description": "API REST Node.js/TypeScript et application Android Java pour la gestion des visites médicales GSB.",
     "url": "https://pacohybord.sbs/projects/scolaire-1.html",
     "inLanguage": "fr-FR"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
@@ -44,93 +44,243 @@
   <a href="../index.html" class="proj-nav-logo">Paco.</a>
 </nav>
 
+<!-- ─── HERO ───────────────────────────────── -->
 <section class="proj-hero">
   <div class="proj-hero-inner">
     <span class="proj-eyebrow">Scolaire — BTS SIO</span>
-    <h1>Projet <em>scolaire 1</em></h1>
+    <h1><em>GSB</em></h1>
     <div class="proj-hero-meta">
       <div class="proj-hero-meta-item">
         <span class="proj-hero-meta-label">Type</span>
-        <span class="proj-hero-meta-value">Projet scolaire</span>
+        <span class="proj-hero-meta-value">API REST + App Android</span>
       </div>
       <div class="proj-hero-meta-item">
         <span class="proj-hero-meta-label">Stack</span>
-        <span class="proj-hero-meta-value">À compléter</span>
+        <span class="proj-hero-meta-value">Java · TypeScript · MongoDB</span>
       </div>
       <div class="proj-hero-meta-item">
-        <span class="proj-hero-meta-label">Statut</span>
-        <span class="proj-hero-meta-value">À compléter</span>
+        <span class="proj-hero-meta-label">Contexte</span>
+        <span class="proj-hero-meta-value">Projet scolaire</span>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">Code</span>
+        <a class="proj-hero-meta-value proj-hero-link" href="https://github.com/pacobrnt/GSB-android" target="_blank" rel="noopener">Android ↗</a>
+      </div>
+      <div class="proj-hero-meta-item">
+        <span class="proj-hero-meta-label">&nbsp;</span>
+        <a class="proj-hero-meta-value proj-hero-link" href="https://github.com/pacobrnt/GSB-api-main" target="_blank" rel="noopener">API ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="proj-carousel">
-  <div class="proj-carousel-viewport">
-    <div class="proj-carousel-track">
-
-      <div class="proj-carousel-slide">
-        <svg viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1280" height="720" fill="#d6d6d2"/>
-          <path d="M640 100 C640 100 900 360 900 400 C900 440 640 660 640 660 C640 660 380 440 380 400 C380 360 640 100 640 100Z" fill="#1a1a1a" opacity=".3"/>
-          <circle cx="640" cy="400" r="80" fill="#d6d6d2"/>
-          <rect x="540" y="380" width="200" height="40" rx="8" fill="#1a1a1a" opacity=".08"/>
-        </svg>
+<!-- ─── PHONE MOCKUP ──────────────────────── -->
+<div class="proj-phones">
+  <div class="proj-phones-inner">
+    <div class="phone-unit">
+      <div class="phone-mockup-wrap">
+        <button class="phone-tap phone-tap-l" id="phonePrev" aria-label="Précédent">
+          <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M7 1.5L2 8L7 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="phone-mockup">
+          <div class="phone-bar"><div class="phone-pill"></div></div>
+          <div class="phone-screen" id="phoneScreen">
+            <button class="phone-screen-tap phone-screen-tap-l" data-target="phonePrev"></button>
+            <button class="phone-screen-tap phone-screen-tap-r" data-target="phoneNext"></button>
+            <div class="phone-slide active" data-label="Connexion"><img src="../img/projets/GSB/login.png" alt="Connexion"></div>
+            <div class="phone-slide" data-label="Informations"><img src="../img/projets/GSB/info.png" alt="Informations"></div>
+            <div class="phone-slide" data-label="Détail praticien"><img src="../img/projets/GSB/detail.png" alt="Détail praticien"></div>
+          </div>
+        </div>
+        <button class="phone-tap phone-tap-r" id="phoneNext" aria-label="Suivant">
+          <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M2 1.5L7 8L2 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
-
-      <div class="proj-carousel-slide">
-        <svg viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="1280" height="720" fill="#ccccca"/>
-          <rect x="160" y="100" width="960" height="520" rx="20" fill="#1a1a1a" opacity=".06"/>
-          <rect x="200" y="140" width="400" height="300" rx="12" fill="#1a1a1a" opacity=".18"/>
-          <rect x="640" y="140" width="440" height="140" rx="10" fill="#1a1a1a" opacity=".1"/>
-          <rect x="640" y="296" width="440" height="140" rx="10" fill="#1a1a1a" opacity=".1"/>
-          <rect x="200" y="460" width="880" height="100" rx="10" fill="#1a1a1a" opacity=".06"/>
-        </svg>
+      <div class="phone-progress-wrap">
+        <div class="phone-progress" id="phoneDots"></div>
+        <span class="phone-counter" id="phoneCounter">1 / 3</span>
       </div>
-
+      <span class="phone-type-label">Application Android</span>
     </div>
-  </div>
-
-  <button class="proj-carousel-btn proj-carousel-prev" aria-label="Précédent">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-  <button class="proj-carousel-btn proj-carousel-next" aria-label="Suivant">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-
-  <span class="proj-carousel-counter"></span>
-
-  <div class="proj-carousel-dots">
-    <button class="proj-carousel-dot active" aria-label="Slide 1"></button>
-    <button class="proj-carousel-dot" aria-label="Slide 2"></button>
   </div>
 </div>
 
-<section class="proj-details">
-  <div class="proj-details-inner">
-    <div>
-      <h2>Le <em>projet</em></h2>
-      <p>Projet réalisé dans le cadre du BTS SIO option SLAM. Les détails de ce projet seront complétés prochainement.</p>
-    </div>
-    <div>
-      <h2>Technologies <em>utilisées</em></h2>
-      <div class="proj-stack">
-        <span>À compléter</span>
+<!-- ─── CONTENU ───────────────────────────── -->
+<div class="proj-content">
+  <div class="proj-content-inner">
+
+    <!-- À propos + Stack -->
+    <div class="proj-content-grid-2">
+      <div class="proj-block">
+        <span class="proj-block-title">À propos du projet</span>
+        <p class="proj-about-text">
+          <strong>GSB</strong> est un projet en deux parties développé dans le cadre du BTS SIO.
+          L'API REST sécurisée, développée en <strong>Node.js / TypeScript</strong>, gère les visiteurs médicaux, praticiens et visites avec une authentification par <strong>JWT</strong>.
+        </p>
+        <p class="proj-about-text" style="margin-top:16px">
+          L'application mobile <strong>Android</strong> (Java) se connecte à l'API via <strong>Retrofit</strong> et permet aux visiteurs de consulter leur portefeuille de praticiens et d'enregistrer leurs visites. L'API a été testée et documentée avec <strong>Postman</strong>.
+        </p>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Stack technique</span>
+        <div class="proj-stack-list">
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+            Java — Android
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+            TypeScript — Node.js
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
+            Express.js
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+            MongoDB — Mongoose
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android Studio">
+            Android Studio
+          </div>
+          <div class="proj-stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">
+            Postman
+          </div>
+          <div class="proj-stack-item">
+            <span class="proj-stack-icon">🔐</span>
+            JWT — Authentification
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <!-- Fonctionnalités + Parcours -->
+    <div class="proj-content-grid-2-equal">
+      <div class="proj-block">
+        <span class="proj-block-title">Fonctionnalités</span>
+        <div class="proj-feature-list">
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Authentification sécurisée via JWT tokens.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            API REST complète : visiteurs, praticiens, visites, motifs.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Application Android native avec Retrofit et Hilt.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Gestion du portefeuille de praticiens assignés.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Enregistrement et suivi des visites médicales.
+          </div>
+          <div class="proj-feature-item">
+            <span class="proj-feature-dot"></span>
+            Tests et documentation de l'API via Postman.
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-block">
+        <span class="proj-block-title">Parcours utilisateur</span>
+        <div class="proj-arch-list">
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#6366f1">01</span>
+            <div>
+              <div class="proj-arch-item-title">Connexion</div>
+              <div class="proj-arch-item-desc">Authentification JWT, token stocké localement sur l'appareil.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#10b981">02</span>
+            <div>
+              <div class="proj-arch-item-title">Portefeuille</div>
+              <div class="proj-arch-item-desc">Consultation de la liste des praticiens assignés au visiteur.</div>
+            </div>
+          </div>
+          <div class="proj-arch-item">
+            <span class="proj-arch-tag" style="--tag-color:#f59e0b">03</span>
+            <div>
+              <div class="proj-arch-item-title">Visite</div>
+              <div class="proj-arch-item-desc">Enregistrement d'une visite chez un praticien via l'API.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Postman + JWT -->
+    <div class="proj-block">
+      <span class="proj-block-title">Sécurité API — JWT</span>
+      <img src="../img/projets/GSB/postman.png" alt="Test API avec Postman" style="width:100%;border-radius:8px;display:block;margin-bottom:24px;">
+      <p class="proj-about-text">
+        Toutes les routes protégées de l'API requièrent un <strong>JWT token</strong> valide dans le header <code style="font-family:monospace;font-size:.85em;background:rgba(26,26,26,.07);padding:2px 7px;border-radius:4px;">Authorization: Bearer &lt;token&gt;</code>.
+        Si le token est absent, expiré ou invalide, l'API retourne immédiatement une erreur <strong>401 Unauthorized</strong> et bloque l'accès à la ressource.
+        Les tokens sont générés à la connexion et signés avec une clé secrète côté serveur, garantissant qu'aucune donnée ne peut être falsifiée.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── CTA ───────────────────────────────── -->
 <section class="proj-cta">
-  <p>Intéressé par ce projet ?</p>
-  <a href="../index.html#contact" class="btn"><span>Me contacter</span></a>
+  <a href="https://github.com/pacobrnt/GSB-android" target="_blank" rel="noopener" class="btn"><span>App Android ↗</span></a>
+  <a href="https://github.com/pacobrnt/GSB-api-main" target="_blank" rel="noopener" class="btn" style="margin-left:16px"><span>API REST ↗</span></a>
 </section>
 
 <script src="project.js"></script>
+<script>
+function initPhone(screenId, slideSelector, prevId, nextId, dotsId, counterId) {
+  const screen  = document.getElementById(screenId);
+  const slides  = Array.from(screen.querySelectorAll(slideSelector));
+  const dotsWrap = document.getElementById(dotsId);
+  const counter  = document.getElementById(counterId);
+  const prevBtn  = document.getElementById(prevId);
+  const nextBtn  = document.getElementById(nextId);
+  if (!slides.length) return;
+
+  let cur = 0;
+
+  slides.forEach((_, i) => {
+    const seg  = document.createElement('button');
+    seg.className = 'phone-progress-seg' + (i === 0 ? ' active' : '');
+    const fill = document.createElement('span');
+    fill.className = 'phone-progress-fill';
+    seg.appendChild(fill);
+    seg.addEventListener('click', () => go(i));
+    dotsWrap.appendChild(seg);
+  });
+
+  function go(i) {
+    slides[cur].classList.remove('active');
+    dotsWrap.children[cur].classList.remove('active');
+    cur = (i + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dotsWrap.children[cur].classList.add('active');
+    counter.textContent = (cur + 1) + ' / ' + slides.length;
+  }
+
+  prevBtn.addEventListener('click', () => go(cur - 1));
+  nextBtn.addEventListener('click', () => go(cur + 1));
+
+  screen.querySelectorAll('.phone-screen-tap').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.target === prevId) go(cur - 1);
+      else go(cur + 1);
+    });
+  });
+}
+
+initPhone('phoneScreen', '.phone-slide', 'phonePrev', 'phoneNext', 'phoneDots', 'phoneCounter');
+</script>
 </body>
 </html>

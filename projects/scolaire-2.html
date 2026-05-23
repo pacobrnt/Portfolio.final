@@ -359,6 +359,7 @@
   <div class="conv-tabs-wrap">
     <div class="conv-tabs">
       <button class="conv-tab active" data-role="etudiant">Étudiant</button>
+      <button class="conv-tab" data-role="tuteur">Tuteur entreprise</button>
       <button class="conv-tab" data-role="professeur">Professeur</button>
       <button class="conv-tab" data-role="ddf">DDF</button>
     </div>
@@ -386,16 +387,39 @@
           <img src="../img/projets/conventio/eleveHome.png" alt="Vue étudiant — accueil">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="etudiant">
-          <img src="../img/projets/conventio/eleveHome2.png" alt="Vue étudiant — accueil 2">
+          <img src="../img/projets/conventio/eleveHome2.png" alt="Vue étudiant — comment ça marche">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="etudiant">
-          <img src="../img/projets/conventio/eleveConvention.png" alt="Vue étudiant — convention">
+          <img src="../img/projets/conventio/eleveFormInit.png" alt="Vue étudiant — création convention (email tuteur)">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="etudiant">
-          <img src="../img/projets/conventio/eleveConventionDescription.png" alt="Vue étudiant — description convention">
+          <img src="../img/projets/conventio/eleveConventionDetail2.png" alt="Vue étudiant — formulaire nouvelle convention">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="etudiant">
-          <img src="../img/projets/conventio/eleveConventionDetail2.png" alt="Vue étudiant — détail convention">
+          <img src="../img/projets/conventio/mailEtudiantRendu.png" alt="Vue étudiant — email reçu (convention prête à vérifier)">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveValidation.png" alt="Vue étudiant — convention à valider">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="etudiant">
+          <img src="../img/projets/conventio/eleveConvention.png" alt="Vue étudiant — dashboard conventions">
+        </div>
+
+        <!-- Vue Tuteur entreprise -->
+        <div class="proj-carousel-slide conv-slide" data-role="tuteur" style="display:none">
+          <img src="../img/projets/conventio/mailpitInboxFinal.png" alt="Vue tuteur — boîte mail Mailpit">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="tuteur" style="display:none">
+          <img src="../img/projets/conventio/mailTuteurRendu.png" alt="Vue tuteur — email reçu (contenu complet)">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="tuteur" style="display:none">
+          <img src="../img/projets/conventio/tuteurFormHaut.png" alt="Vue tuteur — formulaire entreprise">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="tuteur" style="display:none">
+          <img src="../img/projets/conventio/tuteurFormMilieu.png" alt="Vue tuteur — formulaire horaires">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="tuteur" style="display:none">
+          <img src="../img/projets/conventio/tuteurFormSucces.png" alt="Vue tuteur — formulaire envoyé">
         </div>
 
         <!-- Vue Professeur -->
@@ -403,13 +427,19 @@
           <img src="../img/projets/conventio/profdashboard.png" alt="Vue professeur — tableau de bord">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
-          <img src="../img/projets/conventio/profdashboard2.png" alt="Vue professeur — tableau de bord 2">
-        </div>
-        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
           <img src="../img/projets/conventio/profconventionetudiant.png" alt="Vue professeur — conventions étudiants">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
-          <img src="../img/projets/conventio/profvaliderconvention.png" alt="Vue professeur — valider convention">
+          <img src="../img/projets/conventio/mailProfRendu.png" alt="Vue professeur — email reçu (validation demandée)">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profvaliderconvention.png" alt="Vue professeur — page validation (haut)">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profZoneDecision.png" alt="Vue professeur — zone décision (accepter / refuser)">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
+          <img src="../img/projets/conventio/profZoneDecisionRefus.png" alt="Vue professeur — motif de refus rempli">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="professeur" style="display:none">
           <img src="../img/projets/conventio/profvueapresvalidation.png" alt="Vue professeur — après validation">
@@ -420,13 +450,16 @@
           <img src="../img/projets/conventio/admindashboard.png" alt="Vue DDF — tableau de bord">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
-          <img src="../img/projets/conventio/admindashboard2.png" alt="Vue DDF — tableau de bord 2">
-        </div>
-        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
           <img src="../img/projets/conventio/admindetailconvention.png" alt="Vue DDF — détail convention">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
-          <img src="../img/projets/conventio/adminacceptconvention.png" alt="Vue DDF — accepter convention">
+          <img src="../img/projets/conventio/ddfBoutonsDecision.png" alt="Vue DDF — boutons accepter / refuser">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/adminacceptconvention.png" alt="Vue DDF — page acceptation convention">
+        </div>
+        <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
+          <img src="../img/projets/conventio/ddfModalRefusRempli.png" alt="Vue DDF — modal refus avec motif rempli">
         </div>
         <div class="proj-carousel-slide conv-slide" data-role="ddf" style="display:none">
           <img src="../img/projets/conventio/adminconventionvalider.png" alt="Vue DDF — convention validée">
@@ -554,7 +587,7 @@
             <span class="proj-arch-tag" style="--tag-color:#f59e0b">Valid.</span>
             <div>
               <div class="proj-arch-item-title">Validation</div>
-              <div class="proj-arch-item-desc">Validation pédagogique (professeur) et administrative (DDF).</div>
+              <div class="proj-arch-item-desc">Validation pédagogique (professeur) et par le Directeur Délégué aux Formations (DDF).</div>
             </div>
           </div>
           <div class="proj-arch-item">
@@ -593,7 +626,7 @@
         </div>
         <div class="workflow-step wf-active">
           <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
-          <div class="workflow-step-label">Validé DDF<small>Administration</small></div>
+          <div class="workflow-step-label">Validé DDF<small>Dir. délégué formations</small></div>
         </div>
         <div class="workflow-step wf-active">
           <div class="workflow-step-dot"><div class="workflow-step-dot-inner"></div></div>
@@ -715,7 +748,7 @@
         <div class="proj-block">
           <span class="proj-block-title">Travailler avec le client réel</span>
           <p class="proj-about-text">
-            Nous avons tenu <strong>plusieurs réunions directement avec la DDF de l'établissement</strong> (Direction des Finances et des Formations) pour recueillir les besoins réels et affiner le périmètre de l'application. Ces échanges nous ont permis de co-construire le <strong>diagramme de classe</strong>, de valider les rôles et les transitions du workflow, et de nous assurer que chaque écran correspondait aux attentes concrètes de l'équipe administrative.
+            Nous avons tenu <strong>plusieurs réunions directement avec la DDF de l'établissement</strong> (Directeur Délégué aux Formations professionnelles et technologiques) pour recueillir les besoins réels et affiner le périmètre de l'application. Ces échanges nous ont permis de co-construire le <strong>diagramme de classe</strong>, de valider les rôles et les transitions du workflow, et de nous assurer que chaque écran correspondait aux attentes concrètes de l'équipe administrative.
           </p>
           <p class="proj-about-text" style="margin-top:16px">
             Travailler directement avec l'équipe qui allait utiliser l'outil au quotidien a considérablement orienté nos choix d'architecture et de design. Un projet ancré dans une réalité terrain, pas seulement dans un cahier des charges.
@@ -749,6 +782,7 @@
 
   const urlMap = {
     etudiant:   'conventio.gabriel-faure.fr/etudiant',
+    tuteur:     'conventio.gabriel-faure.fr/company/fill/{token}',
     professeur: 'conventio.gabriel-faure.fr/professeur',
     ddf:        'conventio.gabriel-faure.fr/ddf'
   };
